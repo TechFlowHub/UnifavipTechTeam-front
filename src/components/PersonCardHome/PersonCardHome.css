@@ -1,0 +1,65 @@
+.person-card-home {
+    background-image: linear-gradient(
+      to bottom right, 
+      var(--color-pink-dark), 
+      var(--color-pink-primary),
+      var(--color-pink-light) 
+    );
+
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    color: var(--color-white); 
+    border: none;
+    cursor: pointer;
+}
+
+.organization-card {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+}
+
+.organization-card img {
+  width: 200px;
+  height: 200px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-bottom {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.home-card-name {
+  font-family: var(--font-alumni);
+  font-size: 42px;
+  font-weight: 500;
+}
+
+.home-card-course {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-georama);
+}
+
+.home-card-position {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-georama);
+  margin-top: 5px;
+}
+
+.home-card-description {
+  margin: 10px 0;
+  font-family: var(--font-georama);
+  text-align: justify;
+  font-weight: 500;
+}
