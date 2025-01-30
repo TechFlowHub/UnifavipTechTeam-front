@@ -1,3 +1,8 @@
+.home-card-config {
+  font-family: var(--font-georama);
+  font-weight: 500;
+}
+
 .person-card-home {
     background-image: linear-gradient(
       to bottom right, 
@@ -36,6 +41,8 @@
   display: flex;
   flex-direction: row;
   gap: 30px;
+  align-items: center;
+  margin-top: 30px;
 }
 
 .home-card-name {
@@ -47,19 +54,51 @@
 .home-card-course {
   font-size: 14px;
   font-weight: 600;
-  font-family: var(--font-georama);
 }
 
 .home-card-position {
   font-size: 14px;
   font-weight: 600;
-  font-family: var(--font-georama);
   margin-top: 5px;
 }
 
 .home-card-description {
   margin: 10px 0;
-  font-family: var(--font-georama);
   text-align: justify;
-  font-weight: 500;
+  font-size: 12px;
+}
+
+.home-card-star {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  color: var(--color-yellow-light);
+}
+
+.home-card-star svg {
+  width: 20px;
+  height: 20px;
+}
+
+.home-card-config span {
+  font-weight: 600;
+}
+
+
+@media (max-width: 1400px) {
+  .organization-card img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .home-card-name {
+    font-size: 30px;
+  }
+
+  .card-bottom {
+    margin-top: 10px;
+  }
+  
 }

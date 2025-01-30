@@ -1,5 +1,11 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+
 import PersonCardHome from '../../components/PersonCardHome/PersonCardHome';
-import './Home.css'
+import './Home.css';
 
 const Home = () => {
   return (
@@ -10,14 +16,42 @@ const Home = () => {
       </div>
 
       <h1>Tecnologia da Informação</h1>
+      <Swiper
+        slidesPerView={2} 
+        spaceBetween={30}  
+        navigation  
+        pagination={{ clickable: true }} 
+        autoplay={{ delay: 3000 }}  
+        loop  
+        modules={[Navigation, Pagination, Autoplay]}
+        className="content-card-home"
+      >
+        <SwiperSlide><PersonCardHome /></SwiperSlide>
+        <SwiperSlide><PersonCardHome /></SwiperSlide>
+        <SwiperSlide><PersonCardHome /></SwiperSlide>
+        <SwiperSlide><PersonCardHome /></SwiperSlide>
+      </Swiper>
 
-      <div className='content-card-home'>
-        <PersonCardHome />
-        <PersonCardHome />
-      </div>
+      <hr />
 
+      <h1 className='title-two'>Administração</h1>
+      <Swiper
+        slidesPerView={2}
+        spaceBetween={30}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000 }}
+        loop
+        modules={[Navigation, Pagination, Autoplay]}
+        className="content-card-home"
+      >
+        <SwiperSlide><PersonCardHome /></SwiperSlide>
+        <SwiperSlide><PersonCardHome /></SwiperSlide>
+        <SwiperSlide><PersonCardHome /></SwiperSlide>
+        <SwiperSlide><PersonCardHome /></SwiperSlide>
+      </Swiper>
     </div>
-  )
-}
+  );
+};
 
 export default Home;
