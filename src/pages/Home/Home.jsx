@@ -4,8 +4,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
-import PersonCardHome from '../../components/PersonCardHome/PersonCardHome';
+import PersonCardHome from '../../components/HomeComponents/Card/Card';
 import './Home.css';
+import FeatureTeachers from '../../components/HomeComponents/FeatureTeachers/FeatureTeachers';
 
 const Home = () => {
   return (
@@ -34,7 +35,7 @@ const Home = () => {
 
       <hr />
 
-      <h1 className='title-two'>Administração</h1>
+      <h1>Administração</h1>
       <Swiper
         slidesPerView={2}
         spaceBetween={30}
@@ -50,6 +51,9 @@ const Home = () => {
         <SwiperSlide><PersonCardHome /></SwiperSlide>
         <SwiperSlide><PersonCardHome /></SwiperSlide>
       </Swiper>
+
+
+      <FeatureTeachers />
     </div>
   );
 };

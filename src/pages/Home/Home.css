@@ -15,6 +15,7 @@
   font-family: var(--font-georama);
   font-weight: 500;
   color: var(--color-white);
+  margin-top: 15px !important;
 }
 
 .home-page hr {
@@ -46,6 +47,7 @@
   cursor: pointer;
   background-color: var(--color-white); 
   transition: all 0.3s ease; 
+  margin-bottom: 15px;
 }
 
 .home-page .banner-home button:hover {

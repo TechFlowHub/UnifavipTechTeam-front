@@ -1,6 +1,7 @@
 import './App.css'
 import Navbar from './components/Navbar/Navbar';
 import AppRoutes from './routes/AppRoutes'
+import Footer from './components/Footer/Footer.jsx'
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
         <AppRoutes clasname='container'/>
       </div>
       
+      <Footer />
     </>
   )
 }

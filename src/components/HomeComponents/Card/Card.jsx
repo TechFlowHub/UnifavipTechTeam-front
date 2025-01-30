@@ -1,9 +1,9 @@
-import './PersonCardHome.css';
-import Image from '../../assets/placeholder_person.png';
+import './Card.css';
+import Image from '../../../assets/placeholder_person.png';
 
 import { FaStar } from "react-icons/fa";
 
-const PersonCardHome = ({ person }) => {
+const Card = ({ person }) => {
   return (
     <button className="person-card-home">
       <div className='organization-card'>
@@ -32,4 +32,4 @@ const PersonCardHome = ({ person }) => {
   );
 };
 
-export default PersonCardHome;
+export default Card;

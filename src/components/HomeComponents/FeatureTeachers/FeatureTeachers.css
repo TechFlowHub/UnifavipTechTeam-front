@@ -1,0 +1,40 @@
+.feature-teachers {
+  padding: 60px 140px;
+  background-color: var(--color-pink-primary);
+  width: calc(100%);
+  margin-left: -140px;
+  margin-right: -140px;
+  margin-top: 60px;
+}
+
+.feature-teachers h1 {
+  margin: 0 0 45px 0;
+  color: var(--color-white);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.feature-teachers .circle {
+  background-color: var(--color-white);
+  border-radius: 50%;
+  padding: 90px;
+  width: 1px;
+  height: 1px;
+}
+
+.feature-teachers .swiper {
+  padding-bottom: 15px;
+}
+
+@media (max-width: 1400px) {
+  .feature-teachers {
+    padding: 90px;
+    width: calc(100%);
+    margin-left: -90px;
+    margin-right: -90px;
+  }
+
+  .feature-teachers .circle {
+    padding: 70px;
+  }
+}

@@ -1,0 +1,13 @@
+.footer {
+  margin-top: 60px;
+}
+
+.footer-top {
+  padding: 45px;
+  background-color: var(--color-pink-extra-dark);
+}
+
+.footer-content {
+  background-color: var(--color-pink-primary);
+  padding: 250px;
+}
