@@ -1,5 +1,46 @@
 .navbar {
-  padding: 25px 200px;
+  padding: 16px 140px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   max-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navegation {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-logo {
+  max-height: 40px;
+}
+
+.navegation a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: var(--font-georama);
+  font-weight: 500;
+  color: var(--color-black);
+  transition: .3s ease-in-out;
+}
+
+.navegation a:hover {
+  color: var(--color-pink-light);
+}
+
+.navegation a img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid var(--color-pink-primary);
+}
+
+@media (max-width: 1400px) {
+  .navbar {
+    padding: 16px 90px;
+  }
 }

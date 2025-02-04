@@ -7,6 +7,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import PersonCardHome from '../../components/HomeComponents/Card/Card';
 import './Home.css';
 import FeatureTeachers from '../../components/HomeComponents/FeatureTeachers/FeatureTeachers';
+import Enterprise from '../../components/HomeComponents/Enterprise/Enterprise';
 
 const Home = () => {
   return (
@@ -54,6 +55,8 @@ const Home = () => {
 
 
       <FeatureTeachers />
+
+      <Enterprise />
     </div>
   );
 };
