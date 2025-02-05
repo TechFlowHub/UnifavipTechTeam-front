@@ -10,12 +10,6 @@ const Login = () => {
         placeholder: "Digite seu email institucional (@unifavip)",
       },
       {
-        id: "username",
-        type: "text",
-        label: "Usuário",
-        placeholder: "Digite seu usuário...",
-      },
-      {
         id: "password",
         type: "password",
         label: "Password",

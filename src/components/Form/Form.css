@@ -60,6 +60,11 @@ body:has(.form-container) {
     outline: none;
 }
 
+.form-content input[type="text"],
+.form-content input[type="email"] {
+    width: 93%;
+}
+
 .form-actions {
     display: flex;
     justify-content: space-between;
@@ -120,4 +125,16 @@ body:has(.form-container) {
 
 .toggle-password:hover {
     color: var(--color-pink-light);
+}
+
+@media screen and (max-width: 768px) {
+    .form-container form {
+        padding: 60px 30px;
+    }
+
+    .form-content input[type="text"],
+    .form-content input[type="email"] {
+        width: 90%;
+    }
+    
 }
