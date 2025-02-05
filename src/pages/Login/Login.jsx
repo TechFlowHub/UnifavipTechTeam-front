@@ -6,19 +6,14 @@ const Login = () => {
       {
         id: "email",
         type: "email",
-        label: "Login",
+        label: "Email Institucional",
         placeholder: "Digite seu email institucional (@unifavip)",
       },
       {
         id: "password",
         type: "password",
-        label: "Password",
+        label: "Senha",
         placeholder: "Digite sua senha...",
-      },
-      {
-        id: "remember",
-        type: "checkbox",
-        label: "Lembrar-me",
       }
     ],
     links: [
