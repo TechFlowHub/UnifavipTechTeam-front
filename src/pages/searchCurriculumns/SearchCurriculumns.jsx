@@ -24,6 +24,24 @@ const SearchCurriculumns = () => {
             </div>
             <input type="submit" value="Buscar currículo" />
         </div>
+        <div className='search-results'>
+            <div className='search-results-left'>
+                <h2>Currículos</h2>
+                <p>xxxx pessoa(s) encontrada(s)</p>
+            </div>
+            <div className='search-results-right'>
+                <label>Ordenados por: Quantidade de estrelas</label>
+                <select name="filter" id="filter">
+                    <option value="all">Filtros</option>
+                    <option value="">Opção 1</option>
+                    <option value="">Opção 2</option>
+                    <option value="">Opção 3</option>
+                    <option value="">Opção 4</option>
+                    <option value="">Opção 5</option>
+                </select>
+            </div>
+        </div>
+        <hr />
         </>
     );
 }
