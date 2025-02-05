@@ -1,9 +1,57 @@
+import React, { useState } from "react";
 import "./Footer.css";
 import Logo from "../../assets/logo_favip_180.png";
 import QrCode from "../../assets/qrcode_wyden_2.png";
 import { FaGithub } from "react-icons/fa";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 const Footer = () => {
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
+  const toggleDropdown = (index) => {
+    setActiveDropdown(activeDropdown === index ? null : index);
+  };
+
+  const footerLinks = [
+    {
+      title: "Quem somos ?",
+      links: [
+        { text: "Nossas unidades", href: "#" },
+        { text: "Onde estamos", href: "#" },
+        { text: "Ouvidoria", href: "#" },
+        { text: "Responsabilidade", href: "#" },
+      ],
+    },
+    {
+      title: "Redes sociais",
+      links: [
+        { text: "Instagram", href: "#" },
+        { text: "Facebook", href: "#" },
+        { text: "Twitter", href: "#" },
+        { text: "Linkedin", href: "#" },
+        { text: "Youtube", href: "#" },
+      ],
+    },
+    {
+      title: "Cursos",
+      links: [
+        { text: "Graduação", href: "#" },
+        { text: "Pós-graduação", href: "#" },
+        { text: "Experimentar", href: "#" },
+        { text: "EAD", href: "#" },
+      ],
+    },
+    {
+      title: "Área do aluno",
+      links: [
+        { text: "Portal do aluno", href: "#" },
+        { text: "Consultar diploma", href: "#" },
+        { text: "Enade", href: "#" },
+        { text: "SIA", href: "#" },
+      ],
+    },
+  ];
+
   return (
     <div className="footer">
       <div className="footer-top">
@@ -11,77 +59,20 @@ const Footer = () => {
       </div>
       <div className="footer-content">
         <div className="list-container">
-          <div className="list-column">
-            <h3>Quem somos ?</h3>
-            <ul>
-              <li>
-                <a href="#">Nossas unidades</a>
-              </li>
-              <li>
-                <a href="#">Onde estamos</a>
-              </li>
-              <li>
-                <a href="#">Ouvidoria</a>
-              </li>
-              <li>
-                <a href="#">Responsabilidade</a>
-              </li>
-            </ul>
-          </div>
-          <div className="list-column">
-            <h3>Redes sociais</h3>
-            <ul>
-              <li>
-                <a href="#">Instagram</a>
-              </li>
-              <li>
-                <a href="#">Facebook</a>
-              </li>
-              <li>
-                <a href="#">Twitter</a>
-              </li>
-              <li>
-                <a href="#">Linkedin</a>
-              </li>
-              <li>
-                <a href="#">Youtube</a>
-              </li>
-            </ul>
-          </div>
-          <div className="list-column">
-            <h3>Cursos</h3>
-            <ul>
-              <li>
-                <a href="#">Graduação</a>
-              </li>
-              <li>
-                <a href="#">Pós-graduação</a>
-              </li>
-              <li>
-                <a href="#">Experimentar</a>
-              </li>
-              <li>
-                <a href="#">EAD</a>
-              </li>
-            </ul>
-          </div>
-          <div className="list-column">
-            <h3>Área do aluno</h3>
-            <ul>
-              <li>
-                <a href="#">Portal do aluno</a>
-              </li>
-              <li>
-                <a href="#">Consultar diploma</a>
-              </li>
-              <li>
-                <a href="#">Enade</a>
-              </li>
-              <li>
-                <a href="#">SIA</a>
-              </li>
-            </ul>
-          </div>
+          {footerLinks.map((column, index) => (
+            <div className="list-column" key={index}>
+              <h3 onClick={() => toggleDropdown(index)}>
+                {column.title} {activeDropdown === index ? <IoIosArrowUp /> : <IoIosArrowDown />}
+              </h3>
+              <ul className={activeDropdown === index ? "active" : ""}>
+                {column.links.map((link, linkIndex) => (
+                  <li key={linkIndex}>
+                    <a href={link.href}>{link.text}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
         <hr />
         <div className="footer-mid">
