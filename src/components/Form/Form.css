@@ -85,15 +85,6 @@ body:has(.form-container) {
     font-weight: 600;
 }
 
-.form-content input[type="checkbox"] {
-    width: 15px;
-    height: 15px; 
-    position: absolute;
-    left: 150px;
-    top: 63.9%;
-    cursor: pointer;
-}
-
 .form-content input[type="submit"] {
     cursor: pointer;
     background-color: var(--color-pink-primary);

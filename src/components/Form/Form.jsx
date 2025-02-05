@@ -15,8 +15,10 @@ const Form = ({ formConfig }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
-  };
+    if (formConfig.onSubmit) {
+      formConfig.onSubmit();
+    }
+  };  
 
   return (
     <div className="form-container">

@@ -14,11 +14,6 @@ const Login = () => {
         type: "password",
         label: "Senha",
         placeholder: "Digite sua senha...",
-      },
-      {
-        id: "remember",
-        type: "checkbox",
-        label: "Lembrar-me",
       }
     ],
     links: [
