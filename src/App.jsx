@@ -7,7 +7,7 @@ import { useLocation } from 'react-router-dom';
 function App() {
   const location = useLocation();
   
-  const hiddenRoutes = ["/login", "/register", "/forgot-password"];
+  const hiddenRoutes = ["/login", "/register", "/forgot-password", "/recover-token"];
   const hideLayout = hiddenRoutes.includes(location.pathname);
 
 

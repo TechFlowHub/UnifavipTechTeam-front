@@ -73,10 +73,16 @@ const Form = ({ formConfig }) => {
                   </span>
                 );
               }
-              if (text === "Entrar!") {
+              else if (text === "Entrar!") {
                 return (
                   <span key={to}>
                     Já tem registro? <Link to={to}>{text}</Link>
+                  </span>
+                );
+              } else if (text === "Reenviar código") {
+                return (
+                  <span key={to}>
+                    Esqueceu seu token? <Link to={to}>{text}</Link>
                   </span>
                 );
               }
