@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Footer.css";
-import Logo from "../../assets/logo_favip_180.png";
+import Logo from "../../assets/logo_favip_white_210.png";
 import QrCode from "../../assets/qrcode_wyden_2.png";
 import { FaGithub } from "react-icons/fa";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
