@@ -1,7 +1,7 @@
 import Form from "../../components/Form/Form";
 
-const Login = () => {
-  const loginConfig = {
+const Register = () => {
+  const RegisterConfig = {
     fields: [
       {
         id: "email",
@@ -16,19 +16,19 @@ const Login = () => {
         placeholder: "Digite sua senha...",
       },
       {
-        id: "remember",
-        type: "checkbox",
-        label: "Lembrar-me",
-      }
+        id: "confirm-password",
+        type: "password",
+        label: "Confirmação de senha",
+        placeholder: "Confirme sua senha...",
+      },
     ],
     links: [
-      { to: "/register", text: "Registre-se!" },
-      { to: "/forgot-password", text: "Esqueceu a senha?" },
+      { to: "/login", text: "Entrar!" },
     ],
     submitButtonText: "Entrar",
   };
 
-  return <Form formConfig={loginConfig} />;
+  return <Form formConfig={RegisterConfig} />;
 };
 
-export default Login;
+export default Register;
