@@ -22,6 +22,7 @@ body:has(.form-container) {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     gap: 30px;
+    position: relative;
 }
 
 .form-container form img {
@@ -45,7 +46,7 @@ body:has(.form-container) {
 
 .form-content input {
     font-size: 15px;
-    padding: 12px;
+    padding: 12px ;
     font-family: var(--font-georama);
     border: 2px solid var(--color-border-input);
     border-radius: 5px;
@@ -53,16 +54,15 @@ body:has(.form-container) {
     color: var(--color-black);
     font-weight: 500;
     color: #555555;
+    margin-top: 8px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-content input:focus {
     border: 2px solid var(--color-border-input-hover);
     outline: none;
-}
-
-.form-content input[type="text"],
-.form-content input[type="email"] {
-    width: 93%;
 }
 
 .form-actions {
@@ -85,6 +85,15 @@ body:has(.form-container) {
     font-weight: 600;
 }
 
+.form-content input[type="checkbox"] {
+    width: 15px; /* Aumenta a largura */
+    height: 15px; /* Aumenta a altura */
+    position: absolute;
+    left: 150px;
+    top: 61%;
+    cursor: pointer;
+}
+
 .form-content input[type="submit"] {
     cursor: pointer;
     background-color: var(--color-pink-primary);
@@ -102,13 +111,6 @@ body:has(.form-container) {
 
 .password-container {
     position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.password-container input {
-    flex: 1;
-    padding-right: 40px;
 }
 
 .toggle-password {

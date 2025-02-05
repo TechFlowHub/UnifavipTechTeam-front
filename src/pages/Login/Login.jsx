@@ -22,7 +22,7 @@ const Login = () => {
       }
     ],
     links: [
-      { to: "/register", text: "Primeiro login? Registre-se!" },
+      { to: "/register", text: "Registre-se!" },
       { to: "/forgot-password", text: "Esqueceu a senha?" },
     ],
     submitButtonText: "Entrar",

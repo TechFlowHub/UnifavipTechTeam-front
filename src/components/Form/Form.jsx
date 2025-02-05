@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, React } from "react";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Logo from "../../assets/logo_favip_centralizado.png";
@@ -63,11 +63,13 @@ const Form = ({ formConfig }) => {
             ))}
 
             <div className="form-actions">
-                {formConfig.links?.map((link) => (
-                <Link key={link.to} to={link.to}>
-                    {link.text}
-                </Link>
-                ))}
+                {formConfig.links?.map(({ to, text }) =>
+                    text === "Registre-se!" ? (
+                        <span key={to}>Primeiro Login? <Link to={to}>{text}</Link></span>
+                    ) : (
+                        <Link key={to} to={to}>{text}</Link>
+                    )
+                )}
             </div>
 
             <input type="submit" value={formConfig.submitButtonText} />
