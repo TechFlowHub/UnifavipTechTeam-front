@@ -1,4 +1,6 @@
 import './SearchCurriculumns.css';
+import CurriculumnCard from '../../components/CurriculumnCard/CurriculumnCard';
+import ProfilePic from '../../assets/placeholder_person.png';
 
 const SearchCurriculumns = () => {
     return (
@@ -42,6 +44,16 @@ const SearchCurriculumns = () => {
             </div>
         </div>
         <hr />
+        <CurriculumnCard
+            imageSrc={ProfilePic}
+            name="Vinicius Miguel de Arruda"
+            additionalInfo="Ciência da Computação"
+            description="Desenvolvedor Full-Stack"
+            starCount="254"
+            viewCount="12309"
+            text1="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five."
+            text2="Coord. Sebastião, Prof. Kaio Não sei "
+        />
         </>
     );
 }
