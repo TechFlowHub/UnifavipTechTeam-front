@@ -7,7 +7,7 @@ const SearchCurriculumns = () => {
         <>
         <div className="page-header">
             <h1>Buscar Pessoas</h1>
-            <p>Encontre estudantes e profissionais da nossa faculdade. Explore perfis, habilidades e experiências para conectar-se com <br/>talentos da nossa comunidade acadêmica.</p>
+            <p>Encontre estudantes e profissionais da nossa faculdade. Explore perfis, habilidades e experiências para conectar-se com talentos da nossa comunidade acadêmica.</p>
         </div>
         <div className='search-card'>
             <div>

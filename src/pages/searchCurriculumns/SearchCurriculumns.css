@@ -40,6 +40,7 @@ hr {
     color: var(--color-white);
     margin-bottom: 15px !important;
     margin-right: -80px;
+    width: 70%;
 }
 
 .search-card {
@@ -127,3 +128,62 @@ hr {
     border-radius: 5px;
     margin: 0 0 0 10px;
 }
+
+@media (max-width: 1024px) {
+    .page-header {
+        width: calc(100% + 190px);
+        margin-left: -100px;
+        margin-right: 0;
+    }
+
+    .page-header h1 {
+        margin-right: -60px;
+    }
+
+    .page-header p {
+        margin-right: -60px;
+    }
+
+    .search-card {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .search-card div input, select {
+        width: 300px;
+    }
+
+    .search-results {
+        gap: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        width: calc(100% + 190px);
+    }
+
+    .page-header h1 {
+        margin-right: -40px;
+    }
+
+    .page-header p {
+        margin-right: -40px;
+    }
+
+    .search-card {
+        width: 100%;
+        margin-left: -5px;
+    }
+
+    .search-card div input, select {
+        width: 200px;
+    }
+
+    .search-results {
+        gap: 30px;
+        align-items: center;
+        text-align: center;
+    }
+}
+
