@@ -5,7 +5,7 @@ import Login from "../pages/Auth/Login/Login";
 import Register from "../pages/Auth/Register/Register";
 import ForgotPassword from "../pages/Auth/ForgotPassword/ForgotPassword";
 import RecoverToken from "../pages/Auth/RecoverToken/RecoverToken";
-import SearchCurriculumns from "../pages/SearchCurriculumns/SearchCurriculumns";
+import SearchCV from "../pages/searchCV/SearchCV";
 
 const AppRoutes = () => {
   return (
@@ -17,7 +17,7 @@ const AppRoutes = () => {
 
       
       <Route path="/" element={<Home/>} /> 
-      <Route path="/search-cv" element={<SearchCurriculumns/>} />
+      <Route path="/search-cv" element={<SearchCV/>} />
     </Routes>
   )
 }

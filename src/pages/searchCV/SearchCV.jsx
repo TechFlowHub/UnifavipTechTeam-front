@@ -1,6 +1,7 @@
-import './SearchCurriculumns.css';
+import './SearchCV.css';
 import CurriculumnCard from '../../components/CurriculumnCard/CurriculumnCard';
 import ProfilePic from '../../assets/placeholder_person.png';
+import { FaSearch, FaGraduationCap, FaFilter } from "react-icons/fa";
 
 const SearchCurriculumns = () => {
     return (
@@ -10,19 +11,30 @@ const SearchCurriculumns = () => {
             <p>Encontre estudantes e profissionais da nossa faculdade. Explore perfis, habilidades e experiências para conectar-se com talentos da nossa comunidade acadêmica.</p>
         </div>
         <div className='search-card'>
-            <div>
+            <div className='input-conteiner'>
                 <label>Buscar pessoa por nome/cargo:</label>
-                <input type="search" name="search" id="search" placeholder="Nome do aluno ou do cargo" />
+                <div className="search-container">
+                    <FaSearch className="search-icon" />
+                    <input
+                        type="text"
+                        name="searchCV"
+                        id="searchCV"
+                        placeholder="Nome do aluno ou do cargo"
+                    />
+                </div>
             </div>
-            <div>
+            <div className='input-conteiner'>
                 <label>Buscar pessoa por curso:</label>
-                <select name="course" id="course">
-                    <option value="">Selecione um curso</option>
-                    <option value="1">Administração</option>
-                    <option value="2">Ciência da Computação</option>
-                    <option value="3">Engenharia de Software</option>
-                    <option value="4">Sistemas de Informação</option>
-                </select>
+                <div className="search-container select-container">
+                    <FaGraduationCap className="search-icon graduation" />
+                    <select name="course" id="course">
+                        <option value="" disabled selected>Selecione um curso</option>
+                        <option value="1">Administração</option>
+                        <option value="2">Ciência da Computação</option>
+                        <option value="3">Engenharia de Software</option>
+                        <option value="4">Sistemas de Informação</option>
+                    </select>
+                </div>
             </div>
             <input type="submit" value="Buscar currículo" />
         </div>
@@ -32,18 +44,12 @@ const SearchCurriculumns = () => {
                 <p>xxxx pessoa(s) encontrada(s)</p>
             </div>
             <div className='search-results-right'>
-                <label>Ordenados por: Quantidade de estrelas</label>
-                <select name="filter" id="filter">
-                    <option value="all">Filtros</option>
-                    <option value="">Opção 1</option>
-                    <option value="">Opção 2</option>
-                    <option value="">Opção 3</option>
-                    <option value="">Opção 4</option>
-                    <option value="">Opção 5</option>
-                </select>
+                <p><span>Ordenados por:</span> Quantidade de estrelas</p>
+                
+                <button>Filtrar <FaFilter /></button>
             </div>
         </div>
-        <hr />
+        <hr id='hr-id'/>
         <CurriculumnCard
             imageSrc={ProfilePic}
             name="Vinicius Miguel de Arruda"
