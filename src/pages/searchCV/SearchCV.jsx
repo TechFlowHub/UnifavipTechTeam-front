@@ -3,7 +3,7 @@ import CurriculumnCard from '../../components/CurriculumnCard/CurriculumnCard';
 import ProfilePic from '../../assets/placeholder_person.png';
 import { FaSearch, FaGraduationCap, FaFilter } from "react-icons/fa";
 
-const SearchCurriculumns = () => {
+const SearchCV = () => {
     return (
         <>
         <div className="page-header">
@@ -64,4 +64,4 @@ const SearchCurriculumns = () => {
     );
 }
 
-export default SearchCurriculumns;
+export default SearchCV;
