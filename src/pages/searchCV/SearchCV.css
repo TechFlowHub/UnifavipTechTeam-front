@@ -1,3 +1,7 @@
+.search-cv {
+    padding: 0 110px;
+}
+
 .page-header {
     margin-top: 60px;
     background-color: var(--color-pink-primary);
@@ -187,6 +191,10 @@
     .page-header {
       margin-left: -90px;
       margin-right: -90px;
+    }
+
+    .search-cv {
+        padding: 0;
     }
   }
   
