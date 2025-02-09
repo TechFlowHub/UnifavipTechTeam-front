@@ -13,9 +13,9 @@ const CardCV = ({ imageSrc, name, description, additionalInfo, starCount, viewCo
                     <p>{description}</p>
                     <div className="card-info-icons">
                         <FaRegStar />
-                        <h3 style={{ color: 'var(--color-yellow-light)' }}>{starCount}</h3>
+                        <span style={{ color: 'var(--color-yellow-light)' }}>{starCount}</span>
                         <FaRegEye />
-                        <h3>{viewCount}</h3>
+                        <span>{viewCount}</span>
                     </div>
                 </div>
             </div>

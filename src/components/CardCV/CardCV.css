@@ -52,6 +52,12 @@
     height: 20px;
 }
 
+.card-info-icons span{
+    font-family: var(--font-lexend);
+    font-weight: 500;
+    font-size: 14px;
+}
+
 .card-info-icons svg:nth-child(1) {
     fill: var(--color-yellow-light);
 }
