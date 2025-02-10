@@ -1,5 +1,5 @@
 import './SearchCV.css';
-import CurriculumnCard from '../../components/CardCV/CardCV';
+import CardCV from '../../components/CardCV/CardCV';
 import ProfilePic from '../../assets/placeholder_person.png';
 import { FaSearch, FaGraduationCap, FaFilter } from "react-icons/fa";
 import { useState } from 'react';
@@ -71,8 +71,7 @@ const SearchCV = () => {
             label: "Cargo Pretendido",
             type: "select",
             options: [
-              { value: "", label: "Selecione" },
-              { value: "desenvolvedor", label: "Desenvolvedor" },
+              { value: "desenvolvedor", label: "Desenvolvedor Full-Stack" },
               { value: "analista_sistemas", label: "Analista de Sistemas" },
               { value: "engenheiro_software", label: "Engenheiro de Software" },
               { value: "suporte_tecnico", label: "Suporte Técnico" },
@@ -130,7 +129,7 @@ const SearchCV = () => {
                     </div>
                 </div>
                 <hr id='hr-id'/>
-                <CurriculumnCard
+                <CardCV
                     imageSrc={ProfilePic}
                     name="Vinicius Miguel de Arruda"
                     additionalInfo="Ciência da Computação"
