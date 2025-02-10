@@ -87,13 +87,12 @@ const FormModal = ({ formConfig }) => {
                 <Link to={to}>{text}</Link>
               </span>
             ))}
+            </div>
           </div>
-
           <div className="button-group">
             <input type="reset" value={formConfig.resetButtonText} onClick={() => setFormData({})} />
             <input type="submit" value={formConfig.submitButtonText} />
           </div>
-        </div>
       </form>
     </div>
   );
