@@ -1,4 +1,4 @@
-import Form from "../../../components/Form/Form";
+import FormAuth from "../../../components/Forms/FormAuth/FormAuth";
 
 const Login = () => {
   const loginConfig = {
@@ -23,7 +23,7 @@ const Login = () => {
     submitButtonText: "Entrar",
   };
 
-  return <Form formConfig={loginConfig} />;
+  return <FormAuth formConfig={loginConfig} />;
 };
 
 export default Login;

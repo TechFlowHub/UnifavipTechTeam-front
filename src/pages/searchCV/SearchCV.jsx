@@ -2,8 +2,94 @@ import './SearchCV.css';
 import CurriculumnCard from '../../components/CardCV/CardCV';
 import ProfilePic from '../../assets/placeholder_person.png';
 import { FaSearch, FaGraduationCap, FaFilter } from "react-icons/fa";
+import { useState } from 'react';
+import Modal from '../../components/Modal/Modal';
+import FormModal from '../../components/Forms/FormModal/Form';
 
 const SearchCV = () => {
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    const formConfig = {
+        submitButtonText: "Enviar",
+        resetButtonText: "Redefinir",
+        onSubmit: (formData) => {
+          console.log("Dados enviados:", formData);
+        },
+        fields: [
+          {
+            id: "possui_recomendacoes",
+            label: "Possui Recomendações",
+            type: "select",
+            options: [
+              { value: "", label: "Selecione" },
+              { value: "sim", label: "Sim" },
+              { value: "nao", label: "Não" },
+            ],
+          },
+          {
+            id: "possui_experiencia",
+            label: "Possui Experiência",
+            type: "select",
+            options: [
+              { value: "", label: "Selecione" },
+              { value: "sim", label: "Sim" },
+              { value: "nao", label: "Não" },
+            ],
+          },
+          {
+            id: "previsao_conclusao",
+            label: "Previsão de Conclusão",
+            type: "select",
+            options: [
+              { value: "", label: "Selecione" },
+              { value: "2024", label: "2024" },
+              { value: "2025", label: "2025" },
+              { value: "2026", label: "2026" },
+              { value: "2027", label: "2027" },
+            ],
+          },
+          {
+            id: "pcd",
+            label: "PCD (Pessoa com Deficiência)",
+            type: "select",
+            options: [
+              { value: "", label: "Selecione" },
+              { value: "sim", label: "Sim" },
+              { value: "nao", label: "Não" },
+            ],
+          },
+          {
+            id: "quantidade_estrelas",
+            label: "Quantidade de Estrelas",
+            type: "select",
+            options: [
+              { value: "", label: "Selecione" },
+              { value: "1", label: "★" },
+              { value: "2", label: "★★" },
+              { value: "3", label: "★★★" },
+              { value: "4", label: "★★★★" },
+              { value: "5", label: "★★★★★" },
+            ],
+          },
+          {
+            id: "cargo_pretendido",
+            label: "Cargo Pretendido",
+            type: "select",
+            options: [
+              { value: "", label: "Selecione" },
+              { value: "desenvolvedor", label: "Desenvolvedor" },
+              { value: "analista_sistemas", label: "Analista de Sistemas" },
+              { value: "engenheiro_software", label: "Engenheiro de Software" },
+              { value: "suporte_tecnico", label: "Suporte Técnico" },
+              { value: "designer_ui_ux", label: "Designer UI/UX" },
+            ],
+          },
+        ],
+        links: [{ to: "/termos", text: "Termos e Condições" }],
+        resetButtonText: "Limpar",
+        submitButtonText: "Filtrar",
+      };
+
     return (
         <>
             <div className="page-header">
@@ -48,7 +134,7 @@ const SearchCV = () => {
                     <div className='search-results-right'>
                         <p><span>Ordenados por:</span> Quantidade de estrelas</p>
                         
-                        <button>Filtrar <FaFilter /></button>
+                        <button onClick={() => setModalOpen(!isModalOpen)}>Filtrar <FaFilter /></button>
                     </div>
                 </div>
                 <hr id='hr-id'/>
@@ -63,6 +149,18 @@ const SearchCV = () => {
                     text2="Coord. Sebastião, Prof. Kaio Não sei "
                 />
             </div>
+
+            <div>
+            <Modal
+                isOpen={isModalOpen}
+                title="Filtros"
+                onClose={() => setModalOpen(false)}
+                onSubmit={null}
+            >
+                <FormModal formConfig={ formConfig }/>
+            </Modal>
+            </div>
+
         </>
     );
 }

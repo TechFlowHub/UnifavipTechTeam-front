@@ -1,36 +1,32 @@
 import { useState, React } from "react";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import Logo from "../../assets/logo_favip_centralizado.png";
 import "./Form.css";
 
-const Form = ({ formConfig }) => {
+const FormModal = ({ formConfig }) => {
   const [formData, setFormData] = useState({});
   const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
+    const { id, value, type, checked } = e.target;
+    setFormData({ ...formData, [id]: type === "checkbox" ? checked : value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formConfig.onSubmit) {
-      formConfig.onSubmit();
+      formConfig.onSubmit(formData);
     }
-  };  
+  };
 
   return (
-    <div className="form-container">
+    <div className="form-modal">
       <form onSubmit={handleSubmit} autoComplete="off">
-        <Link to="/">
-          <img src={Logo} alt="logo" />
-        </Link>
-
-        <div className="form-content">
+        <div className="form-modal-content">
           {formConfig.fields.map((field) => (
-            <div key={field.id}>
+            <div key={field.id} className="form-group">
               <label htmlFor={field.id}>{field.label}:</label>
+
               {field.type === "password" ? (
                 <div className="password-container">
                   <input
@@ -40,7 +36,6 @@ const Form = ({ formConfig }) => {
                     onChange={handleChange}
                     placeholder={field.placeholder}
                     required
-                    autoComplete="off"
                   />
                   <button
                     type="button"
@@ -50,6 +45,29 @@ const Form = ({ formConfig }) => {
                     {showPassword ? <FaEyeSlash /> : <FaEye />}
                   </button>
                 </div>
+              ) : field.type === "select" ? (
+                <select id={field.id} value={formData[field.id] || ""} onChange={handleChange} required>
+                  {field.options.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              ) : field.type === "radio" ? (
+                <div className="radio-group">
+                  {field.options.map((option) => (
+                    <label key={option.value}>
+                      <input
+                        type="radio"
+                        name={field.id}
+                        value={option.value}
+                        checked={formData[field.id] === option.value}
+                        onChange={handleChange}
+                      />
+                      {option.label}
+                    </label>
+                  ))}
+                </div>
               ) : (
                 <input
                   type={field.type}
@@ -58,43 +76,27 @@ const Form = ({ formConfig }) => {
                   onChange={handleChange}
                   placeholder={field.placeholder}
                   required
-                  autoComplete="off"
                 />
               )}
             </div>
           ))}
 
           <div className="form-actions">
-            {formConfig.links?.map(({ to, text }) => {
-              if (text === "Registre-se!") {
-                return (
-                  <span key={to}>
-                    Primeiro Login? <Link to={to}>{text}</Link>
-                  </span>
-                );
-              }
-              else if (text === "Entrar!") {
-                return (
-                  <span key={to}>
-                    Já tem registro? <Link to={to}>{text}</Link>
-                  </span>
-                );
-              } else if (text === "Reenviar código") {
-                return (
-                  <span key={to}>
-                    Esqueceu seu token? <Link to={to}>{text}</Link>
-                  </span>
-                );
-              }
-              return <Link key={to} to={to}>{text}</Link>;
-            })}
+            {formConfig.links?.map(({ to, text }) => (
+              <span key={to}>
+                <Link to={to}>{text}</Link>
+              </span>
+            ))}
           </div>
 
-          <input type="submit" value={formConfig.submitButtonText} />
+          <div className="button-group">
+            <input type="reset" value={formConfig.resetButtonText} onClick={() => setFormData({})} />
+            <input type="submit" value={formConfig.submitButtonText} />
+          </div>
         </div>
       </form>
     </div>
   );
 };
 
-export default Form;
+export default FormModal;

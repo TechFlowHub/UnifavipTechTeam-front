@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Form from "../../../components/Form/Form";
+import FormAuth from "../../../components/Forms/FormAuth/FormAuth";
 
 const ForgotPassword = () => {
   const registerConfig = {
@@ -30,7 +30,7 @@ const ForgotPassword = () => {
   };
 
 
-  return <Form formConfig={ registerConfig } />;
+  return <FormAuth formConfig={ registerConfig } />;
 };
 
 export default ForgotPassword;

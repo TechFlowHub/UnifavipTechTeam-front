@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Form from "../../../components/Form/Form";
+import FormAuth from "../../../components/Forms/FormAuth/FormAuth";
 
 const Register = () => {
   const [step, setStep] = useState(1);
@@ -51,7 +51,7 @@ const Register = () => {
     onSubmit: handleValidationSubmit, 
   };
 
-  return <Form formConfig={step === 1 ? registerConfig : validationConfig} />;
+  return <FormAuth formConfig={step === 1 ? registerConfig : validationConfig} />;
 };
 
 export default Register;

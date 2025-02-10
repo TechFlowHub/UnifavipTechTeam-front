@@ -1,5 +1,4 @@
-import { useState } from "react";
-import Form from "../../../components/Form/Form";
+import FormAuth from "../../../components/Forms/FormAuth/FormAuth";
 
 const RecoverToken = () => {
   const registerConfig = {
@@ -15,7 +14,7 @@ const RecoverToken = () => {
   };
 
 
-  return <Form formConfig={ registerConfig } />;
+  return <FormAuth formConfig={ registerConfig } />;
 };
 
 export default RecoverToken;
