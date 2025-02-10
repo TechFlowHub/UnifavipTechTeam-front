@@ -86,7 +86,6 @@
   font-weight: 600;
 }
 
-
 @media (max-width: 1400px) {
   .organization-card img {
     width: 160px;
@@ -99,6 +98,34 @@
 
   .card-bottom {
     margin-top: 10px;
+  }
+  
+}
+
+@media (max-width: 1200px) {
+  .organization-card img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .home-card-name {
+    font-size: 24px;
+  }
+
+  .home-card-course {
+    font-size: 12px;
+  }
+
+  .home-card-position {
+    font-size: 12px;
+  }
+
+  .home-card-description {
+    font-size: 10px;
+  }
+
+  .home-card-star {
+    font-size: 12px;
   }
   
 }
