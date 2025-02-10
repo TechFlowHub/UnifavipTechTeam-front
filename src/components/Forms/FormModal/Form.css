@@ -1,86 +1,71 @@
+.modal-content * {
+  font-family: var(--font-lexend);
+}
+
 .form-modal-content {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
 }
 
-.form-group {
-  margin-bottom: 15px;
+.form-modal-content label {
+  font-weight: 500;
 }
 
-.form-group label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
+.form-modal-content select {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  border: 2px solid var(--color-border-input);
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 5px;
+  outline: none;
+  color: var(--gray-emphasis);
 }
 
-.password-container {
-  display: flex;
-  align-items: center;
+.form-modal-content select:focus,
+.form-modal-content select option {
+  color: var(--color-black);
 }
 
-.password-container input {
-  flex-grow: 1;
-}
-
-.toggle-password {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.radio-group {
-  display: flex;
-  gap: 10px;
-}
-
-.form-actions {
-  margin-top: 15px;
+.form-modal-content input[type="submit"],
+.form-modal-content input[type="reset"] {
+  padding: 10px;
+  font-size: 16px;
 }
 
 .button-group {
   display: flex;
-  margin-top: 5px;
-  gap: 10px;
   justify-content: flex-end;
+  gap: 30px;
 }
 
 .button-group input {
-  padding: 10px;
-  cursor: pointer;
-}
-
-input, select {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  transition: .3s ease-in-out;
-}
-
-input[type="submit"], input[type="reset"] {
-  background: var(--color-pink-primary);
-  color: white;
-  border: none;
   font-size: 16px;
-  width: 20%;
-  max-width: 500px;
-}
-
-input[type="reset"] {
-  width: 20%;
-  max-width: 500px;
-  background: transparent;
-  color: var(--color-pink-primary);
+  padding: 10px 20px;
+  cursor: pointer;
   border: 2px solid var(--color-pink-primary);
+  transition: .3s ease-in-out;
+  border-radius: 3px;
 }
 
-input[type="submit"]:hover {
-  background: var(--color-pink-secondary);
-  color: var(--color-pink-primary);
-  border: 2px solid var(--color-pink-primary);
-}
-
-input[type="reset"]:hover {
+.button-group input[type="submit"] {
   background: var(--color-pink-primary);
-  color: white;
+  color: var(--color-white);
+}
+
+.button-group input[type="submit"]:hover {
+  background: var(--color-white);
+  color: var(--color-pink-primary);
+}
+
+.button-group input[type="reset"] {
+  background: var(--color-pink-white);
+  color: var(--color-pink-primary);
+}
+
+.button-group input[type="reset"]:hover {
+  background: var(--color-pink-primary);
+  color: var(--color-white);
 }

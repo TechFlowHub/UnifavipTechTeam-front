@@ -10,8 +10,8 @@ const SearchCV = () => {
     const [isModalOpen, setModalOpen] = useState(false);
 
     const formConfig = {
-        submitButtonText: "Enviar",
-        resetButtonText: "Redefinir",
+        submitButtonText: "Filtrar",
+        resetButtonText: "Limpar",
         onSubmit: (formData) => {
           console.log("Dados enviados:", formData);
         },
@@ -21,7 +21,7 @@ const SearchCV = () => {
             label: "Possui Recomendações",
             type: "select",
             options: [
-              { value: "", label: "Selecione" },
+              { value: "", label: "Ambos" },
               { value: "sim", label: "Sim" },
               { value: "nao", label: "Não" },
             ],
@@ -31,7 +31,7 @@ const SearchCV = () => {
             label: "Possui Experiência",
             type: "select",
             options: [
-              { value: "", label: "Selecione" },
+              { value: "", label: "Ambos" },
               { value: "sim", label: "Sim" },
               { value: "nao", label: "Não" },
             ],
@@ -41,7 +41,7 @@ const SearchCV = () => {
             label: "Previsão de Conclusão",
             type: "select",
             options: [
-              { value: "", label: "Selecione" },
+              { value: "", label: "Nos proximos 2 anos" },
               { value: "2024", label: "2024" },
               { value: "2025", label: "2025" },
               { value: "2026", label: "2026" },
@@ -50,12 +50,11 @@ const SearchCV = () => {
           },
           {
             id: "pcd",
-            label: "PCD (Pessoa com Deficiência)",
+            label: "Pessoa com Deficiência",
             type: "select",
             options: [
-              { value: "", label: "Selecione" },
-              { value: "sim", label: "Sim" },
-              { value: "nao", label: "Não" },
+              { value: "sim", label: "Não" },
+              { value: "nao", label: "Sim" },
             ],
           },
           {
@@ -63,12 +62,8 @@ const SearchCV = () => {
             label: "Quantidade de Estrelas",
             type: "select",
             options: [
-              { value: "", label: "Selecione" },
-              { value: "1", label: "★" },
-              { value: "2", label: "★★" },
-              { value: "3", label: "★★★" },
-              { value: "4", label: "★★★★" },
-              { value: "5", label: "★★★★★" },
+              { value: "crescente", label: "Crescente" },
+              { value: "descrescente", label: "Descrescente" },
             ],
           },
           {
@@ -85,9 +80,6 @@ const SearchCV = () => {
             ],
           },
         ],
-        links: [{ to: "/termos", text: "Termos e Condições" }],
-        resetButtonText: "Limpar",
-        submitButtonText: "Filtrar",
       };
 
     return (
