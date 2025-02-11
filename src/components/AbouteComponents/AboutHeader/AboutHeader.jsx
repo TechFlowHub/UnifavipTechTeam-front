@@ -1,35 +1,37 @@
-import { NavLink } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./AboutHeader.css";
 
-const AboutHeader = ({ link1, link2, link3, link4, activeLink }) => {
+const AboutHeader = ({ stepOne, stepTwo, stepThree, stepFour }) => {
+    const location = useLocation();
+
     return (
-        <div>
-            <div className="links-container">
-                <NavLink
-                    to={link1}
-                    className={activeLink === link1 ? "active-link" : ""}
+        <div className="header-container">
+            <nav className="navigation">
+                <Link 
+                    to={stepOne} 
+                    className={`about-link ${location.pathname === stepOne ? "active" : ""}`}
                 >
-                    <h3>Sobre mim</h3>
-                </NavLink>
-                <NavLink
-                    to={link2}
-                    className={activeLink === link2 ? "active-link" : ""}
+                    Sobre mim
+                </Link>
+                <Link 
+                    to={stepTwo} 
+                    className={`about-link ${location.pathname === stepTwo ? "active" : ""}`}
                 >
-                    <h3>Minhas experiências</h3>
-                </NavLink>
-                <NavLink
-                    to={link3}
-                    className={activeLink === link3 ? "active-link" : ""}
+                    Minhas experiências
+                </Link>
+                <Link 
+                    to={stepThree} 
+                    className={`about-link ${location.pathname === stepThree ? "active" : ""}`}
                 >
-                    <h3>Minhas habilidades</h3>
-                </NavLink>
-                <NavLink
-                    to={link4}
-                    className={activeLink === link4 ? "active-link" : ""}
+                    Minhas habilidades
+                </Link>
+                <Link 
+                    to={stepFour} 
+                    className={`about-link ${location.pathname === stepFour ? "active" : ""}`}
                 >
-                    <h3>Informações adicionais</h3>
-                </NavLink>
-            </div>
+                    Informações adicionais
+                </Link>    
+            </nav>
         </div>
     );
 };
