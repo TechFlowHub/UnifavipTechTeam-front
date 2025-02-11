@@ -1,0 +1,19 @@
+.person-profile-content {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  gap: 30px;
+  margin-top: 30px;
+  align-items: start;
+}
+
+.about-content,
+.person-profile-content {
+  padding: 0 90px;
+}
+
+@media (max-width: 1400px) {
+  .about-content,
+  .person-profile-content {
+    padding: 0;
+  }
+}

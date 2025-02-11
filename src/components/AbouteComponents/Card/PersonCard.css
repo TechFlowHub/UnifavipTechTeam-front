@@ -1,0 +1,77 @@
+.person-card-profile * {
+  font-family: var(--font-lexend);
+}
+
+.person-card-profile {
+  background-image: linear-gradient(to bottom right,
+            var(--color-pink-dark),
+            var(--color-pink-primary),
+            var(--color-pink-light));
+
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 30px;
+  color: white;
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2);
+  min-width: 300px;
+  min-height: 500px;
+  gap: 30px;
+}
+
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.person-label {
+  font-size: 15px;
+}
+
+.person-text {
+  font-size: 14px;
+  margin-top: 15px;
+  text-align: justify;
+}
+
+.person-textarea {
+  width: 240px;
+  height: 150px;
+  margin-top: 15px;
+  padding: 30px;
+  border-radius: 5px;
+  border: none;
+  resize: none;
+}
+
+.edit-button {
+  background-color: white;
+  color: purple;
+  padding: 8px 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.info-icons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+
+@media (max-width: 1400px) {
+  .person-card-profile {
+    min-width: 280px;
+    min-height: 460px;
+  }
+
+  .person-textarea {
+    width: 220px;
+    height: 150px;
+  }
+}

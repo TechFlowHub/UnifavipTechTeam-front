@@ -6,7 +6,7 @@ import Register from "../pages/Auth/Register/Register";
 import ForgotPassword from "../pages/Auth/ForgotPassword/ForgotPassword";
 import RecoverToken from "../pages/Auth/RecoverToken/RecoverToken";
 import SearchCV from "../pages/searchCV/SearchCV";
-import AboutMe from "../pages/PersonProfile/AboutMe/AboutMe";
+import PersonProfile from "../pages/PersonProfile/PersonProfile";
 
 const AppRoutes = () => {
   return (
@@ -20,10 +20,10 @@ const AppRoutes = () => {
       <Route path="/" element={<Home/>} /> 
       <Route path="/search-cv" element={<SearchCV/>} />
 
-      <Route path="/about-me" element={<AboutMe />} />
-      <Route path="/about-me/experiences" element={<AboutMe />} />
-      <Route path="/about-me/skils" element={<AboutMe />} />
-      <Route path="/about-me/info-add" element={<AboutMe />} />
+      <Route path="/about-me" element={<PersonProfile />} />
+      <Route path="/about-me/experiences" element={<PersonProfile />} />
+      <Route path="/about-me/skils" element={<PersonProfile />} />
+      <Route path="/about-me/info-add" element={<PersonProfile />} />
 
       <Route path="*" element={<h1>Not Found</h1>} />
     </Routes>
