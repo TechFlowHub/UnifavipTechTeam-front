@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./PersonCard.css";
-
 import { FaStar, FaRegEye } from "react-icons/fa";
+
+const MAX_CHARACTERS = 250;
 
 const PersonCard = ({ profilePicture, text, isOwner }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -12,7 +13,9 @@ const PersonCard = ({ profilePicture, text, isOwner }) => {
   };
 
   const handleTextChange = (event) => {
-    setAboutText(event.target.value);
+    if (event.target.value.length <= MAX_CHARACTERS) {
+      setAboutText(event.target.value);
+    }
   };
 
   return (
@@ -20,11 +23,18 @@ const PersonCard = ({ profilePicture, text, isOwner }) => {
       <img src={profilePicture || "/default-profile.png"} alt="Profile" className="profile-picture" />
 
       <div>
-        {isOwner && <label className="person-label">Apresentação*</label>}
+        {isOwner && (
+          <label className="person-label">
+            {isEditing ? "Apresentação*" : "Apresentação"}
+          </label>
+        )}
 
         {isOwner ? (
           isEditing ? (
-            <textarea value={aboutText} onChange={handleTextChange} className="person-textarea" />
+            <div>
+              <textarea value={aboutText} onChange={handleTextChange} className="person-textarea" />
+              <p className="char-counter">{aboutText.length}/{MAX_CHARACTERS}</p>
+            </div>
           ) : (
             <p className="person-text">{aboutText || "Nenhuma informação disponível."}</p>
           )
@@ -33,22 +43,24 @@ const PersonCard = ({ profilePicture, text, isOwner }) => {
         )}
       </div>
 
-      <div>
-        {isOwner ? (
-          <button onClick={handleEditClick} className="edit-button">
+      <div className="edit-button">
+        {isOwner && (
+          <button onClick={handleEditClick}>
             {isEditing ? "Salvar" : "Editar"}
           </button>
-        ) : (
+        )}
+      </div>
+
+      {isOwner === false && (
           <div className="info-icons">
-            <span className="home-card-star home-card-config">
-              <FaStar /> 23 {/*substituir pelo número real de estrelas */}
+            <span className="">
+              <FaStar /> 23 {/* substituir pelo número real de estrelas */}
             </span>
-            <span className="home-card-star home-card-config">
-              <FaRegEye /> 21090 {/*substituir pelo número real de visualizações */}
+            <span className="">
+              <FaRegEye /> 21090 {/* substituir pelo número real de visualizações */}
             </span>
           </div>
         )}
-      </div>
     </div>
   );
 };
