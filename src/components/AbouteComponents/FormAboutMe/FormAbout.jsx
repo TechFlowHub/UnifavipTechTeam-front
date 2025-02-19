@@ -14,7 +14,7 @@ const groupedFields = [
   [
     { label: "Data de nascimento", name: "date", type: "date" },
     { label: "Link do Linkedin", name: "linkedin", type: "text"},
-    { label: "Currículo em PDF", name: "cv", type: "upload" },
+    { label: "Currículo em PDF", name: "cv", type: "file" },
   ]
 ];
 
