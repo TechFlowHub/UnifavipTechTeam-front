@@ -1,0 +1,25 @@
+.card-commentary {
+    background-color: var(--color-white);
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    font-family: var(--font-lexend);
+    padding: 15px;
+}
+
+.card-commentary h1 {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.commentary {
+    border: 1px solid var(--gray-text);
+    border-radius: 5px;
+    margin-top: 15px;
+    padding: 20px;
+}
+
+.commentary span {
+    font-size: 13px;
+    color: var(--gray-emphasis);
+}

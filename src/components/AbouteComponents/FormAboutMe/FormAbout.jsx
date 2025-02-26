@@ -135,11 +135,13 @@ const FormAbout = ({ isOwner }) => {
 
           <div>
             <label htmlFor="cv">Currículo em PDF {isEditing && <span>*</span>}</label>
-            <input
-              type="file"
-              name="cv"
-              disabled={!isEditing}
-            />
+              <input
+                type="file"
+                name="cv"
+                id="cv"
+                disabled={!isEditing}
+                accept="application/pdf"
+              />
           </div>
         </div>
 
