@@ -105,3 +105,12 @@
 .about-button {
   width: 200px !important;
 }
+
+input::file-selector-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 500;
+}

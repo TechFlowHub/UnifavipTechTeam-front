@@ -39,11 +39,17 @@
   border: 2px solid var(--color-pink-primary);
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1800px) {
   .navbar {
     padding: 16px 90px;
   }
   
+}
+
+@media (max-width: 1600px) {
+  .navbar {
+    padding: 16px 90px;
+  }
 }
 
 @media (max-width: 1400px) {

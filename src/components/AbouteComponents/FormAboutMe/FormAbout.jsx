@@ -139,7 +139,6 @@ const FormAbout = ({ isOwner }) => {
                 type="file"
                 name="cv"
                 id="cv"
-                disabled={!isEditing}
                 accept="application/pdf"
               />
           </div>
