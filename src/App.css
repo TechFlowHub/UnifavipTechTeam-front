@@ -2,6 +2,13 @@
   padding: 0 140px;
 }
 
+@media (max-width: 1600px) {
+  .container {
+    padding: 0 90px;
+  }
+  
+}
+
 @media (max-width: 1400px) {
   .container {
     padding: 0 90px;
