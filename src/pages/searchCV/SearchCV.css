@@ -186,16 +186,36 @@
     border: 1px solid var(--gray-text);
 }
 
-
-@media (max-width: 1400px) {
+@media (max-width: 1800px) {
     .page-header {
-      margin-left: -90px;
-      margin-right: -90px;
+        margin-left: -90px;
+        margin-right: -90px;
     }
 
     .search-cv {
         padding: 0;
     }
-  }
-  
-  
+}
+
+@media (max-width: 1600px) {
+    .page-header {
+        margin-left: -90px;
+        margin-right: -90px;
+    }
+
+    .search-cv {
+        padding: 0;
+    }
+}
+
+
+@media (max-width: 1400px) {
+    .page-header {
+        margin-left: -90px;
+        margin-right: -90px;
+    }
+
+    .search-cv {
+        padding: 0;
+    }
+}

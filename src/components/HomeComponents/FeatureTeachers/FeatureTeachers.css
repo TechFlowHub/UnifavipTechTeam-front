@@ -26,6 +26,24 @@
   padding-bottom: 15px;
 }
 
+@media (max-width: 1800px) {
+  .feature-teachers {
+    padding: 60px 90px;
+    width: calc(100%);
+    margin-left: -90px;
+    margin-right: -90px;
+  } 
+}
+
+@media (max-width: 1600px) {
+  .feature-teachers {
+    padding: 60px 90px;
+    width: calc(100%);
+    margin-left: -90px;
+    margin-right: -90px;
+  }
+}
+
 @media (max-width: 1400px) {
   .feature-teachers {
     padding: 90px;
