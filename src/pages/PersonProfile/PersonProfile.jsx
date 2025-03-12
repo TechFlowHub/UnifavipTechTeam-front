@@ -5,6 +5,7 @@ import PersonCard from "../../components/AbouteComponents/Card/PersonCard";
 import PersonPicture from  '../../assets/placeholder_person.png'
 import FormAbout from "../../components/AbouteComponents/FormAboutMe/FormAbout";
 import CardCommentary from "../../components/AbouteComponents/CardCommentary/CardCommentary";
+import MyExperience from "../../components/AbouteComponents/MyExperience/MyExperience";
 
 const PersonProfile = () => {
   const location = useLocation();
@@ -24,7 +25,7 @@ const PersonProfile = () => {
         <PersonCard profilePicture={PersonPicture} text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five." isOwner={false} />
 
         {location.pathname === "/about-me" && <FormAbout isOwner={false} />}
-        {location.pathname === "/about-me/experiences" && <h1>2</h1>}
+        {location.pathname === "/about-me/experiences" && <MyExperience isOwner={false} />}
         {location.pathname === "/about-me/skils" && <h1>3</h1>}
         {location.pathname === "/about-me/info-add" && <h1>4</h1>}
         <CardCommentary />
