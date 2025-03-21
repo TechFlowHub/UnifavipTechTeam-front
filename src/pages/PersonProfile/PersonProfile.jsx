@@ -5,6 +5,7 @@ import PersonCard from "../../components/AbouteComponents/Card/PersonCard";
 import PersonPicture from  '../../assets/placeholder_person.png'
 import FormAbout from "../../components/AbouteComponents/FormAboutMe/FormAbout";
 import CardCommentary from "../../components/AbouteComponents/CardCommentary/CardCommentary";
+import FormDiversity from "../../components/AbouteComponents/FormDiversity/FormDiversity";
 
 const PersonProfile = () => {
   const location = useLocation();
@@ -27,7 +28,14 @@ const PersonProfile = () => {
         {location.pathname === "/about-me/experiences" && <h1>2</h1>}
         {location.pathname === "/about-me/skils" && <h1>3</h1>}
         {location.pathname === "/about-me/info-add" && <h1>4</h1>}
+
         <CardCommentary />
+
+        {location.pathname === "/about-me" && <FormDiversity  isOwner={false}/>}
+        {location.pathname === "/about-me/experiences" && <h1>2</h1>}
+        {location.pathname === "/about-me/skils" && <h1>3</h1>}
+        {location.pathname === "/about-me/info-add" && <h1>4</h1>}
+
       </div>
     </>
   );
