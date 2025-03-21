@@ -16,7 +16,7 @@ const FormDiversity = ({ isOwner }) => {
   };
 
   return (
-    <div className="diversity-form">
+    <div className={isOwner ? "diversity-form" : "diversity-form diversity-form-not-owner "}>
       <h1>Diversidade</h1>
       <div className="form-diversity">
         {/* Sexo e Raça/Cor */}

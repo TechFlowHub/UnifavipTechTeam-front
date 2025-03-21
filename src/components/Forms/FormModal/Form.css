@@ -22,6 +22,8 @@
   margin-top: 5px;
   outline: none;
   color: var(--gray-emphasis);
+  background-color: var(--color-gray-light);
+  cursor: pointer;
 }
 
 .form-modal-content select:focus,
