@@ -1,6 +1,7 @@
 .person-profile-content {
   display: grid;
   grid-template-columns: 1fr 5fr;
+  margin-top: 30px;
   gap: 30px;
   align-items: start;
   padding-bottom: 30px;
