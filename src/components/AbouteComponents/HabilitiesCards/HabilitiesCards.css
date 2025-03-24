@@ -1,0 +1,53 @@
+.skill_card{
+    border: 2px solid var(--gray-text);
+    margin-top: 15px;
+    padding: 20px;
+    border-radius: 5px;
+    font-family: var(--font-lexend);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.first_line h3 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.first_line p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--gray-emphasis);
+}
+
+.period p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.badges {
+    display: flex;
+    gap: 10px;
+}
+
+.badges span {
+    background-color: var(--color-pink-primary);
+    color: var(--color-white);
+    width: 60px;
+    height: 20px;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.text_box {
+    text-align: justify;
+}
+
+.text_box p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--gray-emphasis);
+}

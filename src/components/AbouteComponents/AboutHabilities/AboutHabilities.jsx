@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IoIosArrowDown, IoIosArrowUp, IoIosAdd } from 'react-icons/io';
 import './AboutHabilities.css';
+import HabilitiesCards from '../HabilitiesCards/HabilitiesCards';
 
 const AboutHabilities = ({ isOwner }) => {
     const [minimize, setMinimize] = useState(false);
@@ -19,7 +20,7 @@ const AboutHabilities = ({ isOwner }) => {
             </button>
             {!minimize && (
                 <div className='experience_details'>
-                    <p>Hello world.</p>
+                    <HabilitiesCards />
                 </div>
             )}
         </div>
