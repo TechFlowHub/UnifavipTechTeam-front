@@ -1,0 +1,58 @@
+.about_box {
+    max-width: 100%;
+    border-radius: 5px;
+    font-family: var(--font-lexend);
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    gap: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.top_line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.top_line h2 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.top_line button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.top_line svg {
+    font-size: 30px;
+}
+
+.add_experience {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    background-color: var(--gray-background);
+    border: 2px dashed var(--gray-emphasis);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.add_experience h3 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.add_experience svg {
+    font-size: 30px;
+}
+
+.add_experience:hover {
+    background: rgba(0, 0, 0, 0.1);
+}

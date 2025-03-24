@@ -7,6 +7,7 @@ import FormAbout from "../../components/AbouteComponents/FormAboutMe/FormAbout";
 import CardCommentary from "../../components/AbouteComponents/CardCommentary/CardCommentary";
 import FormDiversity from "../../components/AbouteComponents/FormDiversity/FormDiversity";
 import MyExperience from "../../components/AbouteComponents/MyExperience/MyExperience";
+import AboutHabilities from "../../components/AbouteComponents/AboutHabilities/AboutHabilities";
 import Ability from "../../components/AbouteComponents/Ability/Ability";
 
 const PersonProfile = () => {
@@ -34,7 +35,7 @@ const PersonProfile = () => {
         <CardCommentary />
 
         {location.pathname === "/about-me" && <FormDiversity  isOwner={false}/>}
-        {location.pathname === "/about-me/experiences" && <h1>2</h1>}
+        {location.pathname === "/about-me/experiences" && <AboutHabilities isOwner={false} />}
         {location.pathname === "/about-me/skils" && <h1>3</h1>}
         {location.pathname === "/about-me/info-add" && <h1>4</h1>}
 
