@@ -9,15 +9,22 @@ const AboutHabilities = ({ isOwner }) => {
     return (
         <div className='about_box'>
             <div className='top_line'>
-                <h2>Quais são suas experiências</h2>
-                <button onClick={() => setMinimize(!minimize)}>
-                    {minimize ? <IoIosArrowDown /> : <IoIosArrowUp />}
-                </button>
+                <h2>{isOwner ? 'Quais são suas experiências' : 'Minhas experiências'}</h2>
+                {isOwner && (
+                    <button 
+                        onClick={() => setMinimize(!minimize)} 
+                        aria-label={minimize ? 'Expandir' : 'Minimizar'}
+                    >
+                        {minimize ? <IoIosArrowDown /> : <IoIosArrowUp />}
+                    </button>
+                )}
             </div>
-            <button className='add_experience'>
-                <h3>Adicionar experiências</h3>
-                <IoIosAdd />
-            </button>
+            {isOwner && (
+                <button className='add_experience' aria-label="Adicionar experiências">
+                    <h3>Adicionar experiências</h3>
+                    <IoIosAdd />
+                </button>
+            )}
             {!minimize && (
                 <div className='experience_details'>
                     <HabilitiesCards />
@@ -25,6 +32,6 @@ const AboutHabilities = ({ isOwner }) => {
             )}
         </div>
     );
-}
+};
 
 export default AboutHabilities;
