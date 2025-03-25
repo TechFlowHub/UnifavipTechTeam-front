@@ -9,6 +9,7 @@ import FormDiversity from "../../components/AbouteComponents/FormDiversity/FormD
 import MyExperience from "../../components/AbouteComponents/MyExperience/MyExperience";
 import AboutHabilities from "../../components/AbouteComponents/AboutHabilities/AboutHabilities";
 import Ability from "../../components/AbouteComponents/Ability/Ability";
+import AboutFormations from "../../components/AbouteComponents/AboutFormations/AboutFormations";
 
 const PersonProfile = () => {
   const location = useLocation();
@@ -41,7 +42,7 @@ const PersonProfile = () => {
 
         <div></div>
 
-        {location.pathname === "/about-me/experiences" && <h1>2</h1>}
+        {location.pathname === "/about-me/experiences" && <AboutFormations isOwner={false} />}
         {location.pathname === "/about-me/skils" && <h1>3</h1>}
         {location.pathname === "/about-me/info-add" && <h1>4</h1>}
 
