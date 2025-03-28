@@ -10,6 +10,7 @@ import MyExperience from "../../components/AbouteComponents/MyExperience/MyExper
 import AboutHabilities from "../../components/AbouteComponents/AboutHabilities/AboutHabilities";
 import Ability from "../../components/AbouteComponents/Ability/Ability";
 import AboutFormations from "../../components/AbouteComponents/AboutFormations/AboutFormations";
+import AdditionalInformation from "../../components/AbouteComponents/AdditionalInformation/AdditionalInformation";
 
 const PersonProfile = () => {
   const location = useLocation();
@@ -31,7 +32,7 @@ const PersonProfile = () => {
         {location.pathname === "/about-me" && <FormAbout isOwner={false} />}
         {location.pathname === "/about-me/experiences" && <MyExperience isOwner={false} />}
         {location.pathname === "/about-me/skils" && <Ability isOwner={false} />}
-        {location.pathname === "/about-me/info-add" && <h1>4</h1>}
+        {location.pathname === "/about-me/info-add" && <AdditionalInformation isOwner={false} />}
 
         <CardCommentary />
 
