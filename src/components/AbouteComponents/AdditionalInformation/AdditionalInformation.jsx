@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./AdditionalInformation.css";
 import "../FormDiversity/FormDiversity.css";
+import SocialMedia from "../SocialMedia/SocialMedia";
 
 const AdditionalInformation = ({ initialData, isOwner }) => {
     const [isEditing, setIsEditing] = useState(false);
@@ -18,8 +19,8 @@ const AdditionalInformation = ({ initialData, isOwner }) => {
     };
 
     return (
-        <div>
-            <div className="about-infos">
+        <div className="content-about">
+            <div className={isOwner ? "about-infos" : "about-infos about-info-not-owner"}>
                 <h1>Informações adicionais</h1>
 
                 <div className="form-about">
@@ -129,58 +130,7 @@ const AdditionalInformation = ({ initialData, isOwner }) => {
                     )}
                 </div>
             </div>
-            <div className={isOwner ? "diversity-form" : "diversity-form diversity-form-not-owner "}>
-                <h1>Redes sociais</h1>
-                <div className="form-diversity">
-                    {/* Instagram e Facebook */}
-                    <div className="diversity-info">
-                        <div>
-                            <label htmlFor="instagram">
-                                Instagram {isEditing && <span className="optional">Opcional</span>}
-                            </label>
-                            <input
-                                type="text"
-                                name="instagram"
-                                value={formData.instagram}
-                                onChange={handleInputChange}
-                                placeholder="Nenhuma Informação"
-                                disabled={!isEditing}
-                            />
-                        </div>
-                    </div>
-                    <div className="diversity-info">
-                        <div>
-                            <label htmlFor="facebook">
-                                Facebook {isEditing && <span className="optional">Opcional</span>}
-                            </label>
-                            <input
-                                type="text"
-                                name="facebook"
-                                value={formData.facebook}
-                                onChange={handleInputChange}
-                                placeholder="Nenhuma Informação"
-                                disabled={!isEditing}
-                            />
-                        </div>
-                    </div>
-                </div>
-
-                {/* Baixar CV */}
-                <div className="end-line">
-                    <button className="button-download" onClick={() => alert("Baixar CV")}>
-                        Baixar CV
-                    </button>
-                    {isOwner && (
-                        <div className="diversity-button">
-                            {isEditing ? (
-                                <button onClick={() => setIsEditing(!isEditing)}>Salvar</button>
-                            ) : (
-                                <button onClick={() => setIsEditing(!isEditing)}>Editar</button>
-                            )}
-                        </div>
-                    )}
-                </div>
-            </div>
+            <SocialMedia isOwner={isOwner} />
         </div>
     );
 };

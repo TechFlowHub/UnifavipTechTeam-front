@@ -32,7 +32,7 @@ const PersonProfile = () => {
         {location.pathname === "/about-me" && <FormAbout isOwner={false} />}
         {location.pathname === "/about-me/experiences" && <MyExperience isOwner={false} />}
         {location.pathname === "/about-me/skils" && <Ability isOwner={false} />}
-        {location.pathname === "/about-me/info-add" && <AdditionalInformation isOwner={true} />}
+        {location.pathname === "/about-me/info-add" && <AdditionalInformation isOwner={false} />}
 
         <CardCommentary />
 

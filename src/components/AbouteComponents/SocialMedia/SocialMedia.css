@@ -1,0 +1,40 @@
+.diversity-info div input {
+    padding: 10px;
+    font-size: 16px;
+    width: 95%;
+    font-size: 16px;
+    font-weight: 400;
+    border: 2px solid var(--color-border-input);
+    border-radius: 5px;
+    outline: none;
+    color: var(--gray-teste);
+    background-color: var(--color-gray-light);
+    cursor: pointer;
+    font-family: var(--font-lexend);
+}
+
+.end-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.end-line .button-download {
+    font-size: 14px;
+    font-family: var(--font-lexend);
+    border-radius: 5px;
+    padding: 8px 45px;
+    border: 2px solid var(--color-pink-primary);
+    background-color: var(--color-pink-primary);
+    color: var(--color-white);
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.end-line .button-download:hover {
+    background-color: var(--color-white);
+    color: var(--color-pink-primary);
+    border: 2px solid var(--color-pink-primary);
+}
