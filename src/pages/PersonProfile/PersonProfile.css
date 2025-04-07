@@ -13,6 +13,10 @@
   padding-bottom: 30px;
 }
 
+.page-wrapper {
+  height: 559px;
+}
+
 @media (max-width: 1800px) {
   .about-content,
   .person-profile-content {
@@ -35,5 +39,9 @@
   .person-profile-content {
     padding: 0;
     padding-bottom: 30px;
+  }
+
+  .page-wrapper {
+    height: 545px;
   }
 }

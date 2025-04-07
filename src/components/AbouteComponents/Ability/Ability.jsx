@@ -1,4 +1,5 @@
 import './Ability.css'
+import { FaSearch } from "react-icons/fa";
 
 const Ability = ({ isOwner }) => {
   return (
@@ -9,54 +10,40 @@ const Ability = ({ isOwner }) => {
       </div>
 
       <div className="ability-content">
-        <input type="text" className='search-ability' />
-
-        <div className='ability-info'>
-          <span>Lorem Impsum</span>
-
-          <div className='ability-level'>
-            <div>
-              <input type="radio" name="ability-level" id="ability-level" />
-              <label htmlFor="">Básico</label>
-            </div>
-
-            <div>
-              <input type="radio" name="ability-level" id="ability-level" />
-              <label htmlFor="">Intermediário</label>
-            </div>
-
-            <div>
-              <input type="radio" name="ability-level" id="ability-level" />
-              <label htmlFor="">Avançado</label> 
-            </div>    
-          </div>
+        <div className="search-container">
+          <FaSearch className="search-icon" />
+          <input
+            type="text"
+            className="search-ability"
+            placeholder="Escreva ou pesquise suas habilidades"
+          />
         </div>
 
-        <div className='ability-info'>
-          <span>Lorem Impsum</span>
-
-          <div className='ability-level'>
-            <div>
-              <input type="radio" name="ability-level" id="ability-level" />
-              <label htmlFor="">Básico</label>
+        <div className="ability-list">
+          {[...Array(20)].map((_, index) => (
+            <div className='ability-info' key={index}>
+              <span>Lorem Ipsum {index + 1}</span>
+              <div className='ability-level'>
+                <div>
+                  <input type="radio" name={`ability-${index}`} id={`basic-${index}`} />
+                  <label htmlFor={`basic-${index}`}>Básico</label>
+                </div>
+                <div>
+                  <input type="radio" name={`ability-${index}`} id={`inter-${index}`} />
+                  <label htmlFor={`inter-${index}`}>Intermediário</label>
+                </div>
+                <div>
+                  <input type="radio" name={`ability-${index}`} id={`adv-${index}`} />
+                  <label htmlFor={`adv-${index}`}>Avançado</label>
+                </div>
+              </div>
+              <button>Remover Habilidade</button>
             </div>
-
-            <div>
-              <input type="radio" name="ability-level" id="ability-level" />
-              <label htmlFor="">Intermediário</label>
-            </div>
-
-            <div>
-              <input type="radio" name="ability-level" id="ability-level" />
-              <label htmlFor="">Avançado</label> 
-            </div>    
-          </div>
+          ))}
         </div>
-
       </div>
-      
     </div>
   )
 }
 
-export default Ability
+export default Ability;

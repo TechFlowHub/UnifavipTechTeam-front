@@ -1,3 +1,7 @@
+.ability * {
+  font-family: var(--font-lexend);
+}
+
 .ability {
   background-image: linear-gradient(to bottom right,
             var(--color-pink-dark),
@@ -6,7 +10,6 @@
   max-width: 100%;
   height: 100%;
   border-radius: 5px;
-  font-family: var(--font-lexend);
   color: var(--color-white);
   display: flex;
   flex-direction: column;
@@ -27,14 +30,45 @@
 }
 
 .ability .ability-content {
+  height: 100%;
   padding: 0 30px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+
+.ability .search-container {
+  padding: 20px 12px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  border: none;
+  max-height: 40px;
+  border: 2px solid #BABABA;
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
 }
 
 .ability .search-ability {
-  padding: 10px;
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 15px;
+  color: #6e6e6e;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ability .search-ability::placeholder {
+  color: var(--gray-teste);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ability .search-ability:focus {
+  outline: none;
+}
+
+.ability .ability-info {
+  margin: 20px 0;
 }
 
 .ability .ability-info span {
@@ -45,10 +79,61 @@
 .ability .ability-level {
   background-color: var(--color-white);
   color: var(--color-black);
-  padding: 15px 60px;
+  padding: 14px 45px;
   display: flex;
   justify-content: space-between;
   border-radius: 5px;
-  margin-top: 10px;
-  margin-bottom: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.ability .ability-info button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-white);
+  font-weight: 500;
+}
+
+.ability-level div {
+  display:  flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ability-level div input[type="radio"] {
+  appearance: none;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--color-pink-dark);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.ability-level div input[type="radio"]::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-pink-dark);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.ability-level div input[type="radio"]:checked::before {
+  opacity: 1;
+}
+
+.ability-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ability-content::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.568);
+  border-radius: 5px;
 }
