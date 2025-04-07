@@ -16,10 +16,10 @@ const FormAuth = ({ formConfig }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formConfig.onSubmit) {
-      formConfig.onSubmit();
+      formConfig.onSubmit(formData);
     }
-  };  
-
+  };
+  
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit} autoComplete="off">
