@@ -19,7 +19,8 @@ const AdditionalInformation = ({ initialData, isOwner }) => {
     };
 
     return (
-        <div className="content-about">
+        // Depois resolver essa bomba de CSS
+        <div className="content-about"> 
             <div className={isOwner ? "about-infos" : "about-infos about-info-not-owner"}>
                 <h1>Informações adicionais</h1>
 

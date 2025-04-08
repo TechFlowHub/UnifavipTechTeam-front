@@ -67,6 +67,10 @@
   outline: none;
 }
 
+.ability .ability-list {
+  margin-bottom: 20px;
+}
+
 .ability .ability-info {
   margin: 20px 0;
 }

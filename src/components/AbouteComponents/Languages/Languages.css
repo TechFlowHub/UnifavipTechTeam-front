@@ -1,0 +1,120 @@
+.languages {
+    max-width: 100%;
+    border-radius: 5px;
+    font-family: var(--font-lexend);
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    gap: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.languages .languages-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.languages .languages-header h2 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.languages .languages-header button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.languages .languages-header svg {
+    font-size: 30px;
+}
+
+.languages .search-container {
+    padding: 12px 0px;    
+}
+
+.languages .search-container .search-icon {
+    margin-left: 10px;
+}
+
+.search-suggestions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+}
+
+.languages .search-suggestions li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--gray-background);
+    cursor: pointer;
+    transition: .3s ease-in-out
+}
+
+.languages .search-suggestions li:hover {
+    background-color: var(--color-gray-light);
+}
+
+.languages-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* duas colunas fixas */
+    gap: 16px;
+    margin-bottom: 1rem;
+    background-color: var(--color-pink-primary);
+    border-radius: 5px;
+    padding: 30px;
+    margin-top: 15px;
+}
+
+.languages-list > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.level-item {
+    background-color: var(--color-gray-light);
+    border-radius: 5px;
+    padding: 20px 20px;
+    width: 350px;
+    height: 45px;
+}
+
+.level-item input[type="radio"] {
+    appearance: none;
+    border: 3px solid var(--color-pink-primary);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: -5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.level-item input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-pink-primary);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.level-item p {
+    font-size: 12px;
+    margin-left: 30px;
+    color: var(--color-gray);
+    font-weight: 400;
+}
