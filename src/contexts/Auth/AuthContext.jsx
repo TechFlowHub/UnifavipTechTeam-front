@@ -17,7 +17,10 @@ export const AuthProvider = ({ children }) => {
         const data = await api.validateToken(token);
         if (data.user) {
           setUser(data.user);
+          return true;
         }
+        setUser(null);
+        setToken("");
       }
     };
     validateToken();
