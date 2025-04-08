@@ -6,12 +6,16 @@ const api = axios.create({
 
 export const useApi = () => ({
   signin: async (email, password) => {
-    console.log('username', email);
-    const response = await api.post('/auth/login', { email, password });
-    console.log('response', response.data);
-    return response.data;
+    try {
+      const response = await api.post('/auth/login', { email, password });
+      return response.data;
+    } catch (error) {
+     
+      const errorMessage = error.response?.data?.message || "Erro ao fazer login.";
+      return { error: errorMessage };
+    }
   },
-
+  
   logout: async () => {
     const response = await api.post('/auth/logout');
     return response.data;

@@ -7,15 +7,36 @@ import ForgotPassword from "../pages/Auth/ForgotPassword/ForgotPassword";
 import RecoverToken from "../pages/Auth/RecoverToken/RecoverToken";
 import SearchCV from "../pages/searchCV/SearchCV";
 import PersonProfile from "../pages/PersonProfile/PersonProfile";
+import { useContext } from "react";
+import { AuthContext } from "../contexts/Auth/AuthContext";
+import PublicRouteWithRedirect from "./PublicRouteWithRedirect";
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/login" element={<Login/>} /> 
-      <Route path="/register" element={<Register/>} /> 
-      <Route path="/forgot-password" element={<ForgotPassword/>} /> 
-      <Route path="/recover-token" element={<RecoverToken/>} /> 
+       <Route path="/login" element={
+            <PublicRouteWithRedirect>
+              <Login />
+            </PublicRouteWithRedirect>
+          } />
 
+        <Route path="/register" element={
+          <PublicRouteWithRedirect>
+            <Register />
+          </PublicRouteWithRedirect>
+        } />
+
+        <Route path="/forgot-password" element={
+          <PublicRouteWithRedirect>
+            <ForgotPassword />
+          </PublicRouteWithRedirect>
+        } />
+
+        <Route path="/recover-token" element={
+          <PublicRouteWithRedirect>
+            <RecoverToken />
+          </PublicRouteWithRedirect>
+        } />
       
       <Route path="/" element={<Home/>} /> 
       <Route path="/search-cv" element={<SearchCV/>} />

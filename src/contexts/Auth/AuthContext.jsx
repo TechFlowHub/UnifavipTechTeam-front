@@ -13,31 +13,48 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const validateToken = async () => {
       const token = localStorage.getItem("token");
-      if (token) {
-        const data = await api.validateToken(token);
-        if (data.user) {
-          setUser(data.user);
-          return true;
-        }
+  
+      if (!token) {
         setUser(null);
-        setToken("");
+        return;
+      }
+  
+      try {
+        const data = await api.validateToken(token);
+  
+        if (data?.user) {
+          setUser(data.user);
+        } else {
+          setUser(null);
+          localStorage.removeItem("token");
+        }
+      } catch (error) {
+        console.error("Erro ao validar o token:", error);
+        setUser(null);
+        localStorage.removeItem("token");
       }
     };
+  
     validateToken();
-  }, []);
+  }, []);  
 
   const signin = async (email, password) => {
-    const data  = await api.signin(email, password);
-    console.log("data", data);
-
-    if (data.token && data.email) {
-      setToken(data.token);
-      setUser(data.user);
-      return true;
+    try {
+      const data = await api.signin(email, password);
+  
+      if (data.token && data.email) {
+        setToken(data.token);
+        setUser(data.user);
+        return data;
+      }
+  
+      return { error: "Email ou senha incorreta!" };
+    } catch (error) {
+      const errorMessage = error.response?.data?.message || "Erro ao fazer login.";
+      return { error: errorMessage };
     }
-    return false;
   };
-
+  
   const signout = async () => {
     setUser(null);
     setToken("");
