@@ -39,7 +39,7 @@ const PersonProfile = () => {
 
         {location.pathname === "/about-me" && <FormDiversity  isOwner={false}/>}
         {location.pathname === "/about-me/experiences" && <AboutHabilities isOwner={false} />}
-        {location.pathname === "/about-me/skils" && <Languages isOwner={true} />}
+        {location.pathname === "/about-me/skils" && <Languages isOwner={false} />}
         {location.pathname === "/about-me/info-add" && <h1>4</h1>}
 
         <div></div>

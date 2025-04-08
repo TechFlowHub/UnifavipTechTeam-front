@@ -71,6 +71,17 @@
     margin-top: 15px;
 }
 
+.languages-list-non-editable {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-pink-primary);
+    border-radius: 5px;
+    padding: 30px;
+    margin: 10px 0;
+}
+
 .languages-list > div {
     display: flex;
     flex-direction: column;

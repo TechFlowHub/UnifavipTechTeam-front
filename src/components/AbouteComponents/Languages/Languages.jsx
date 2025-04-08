@@ -131,15 +131,42 @@ const Languages = ({ isOwner }) => {
                             </div>
                         </div>                        
                         ) : (
-                            selectedLevels[lang] ? (
+                            <div className="languages-list-non-editable">
                                 <div>
-                                    <strong>Nível:</strong> {
-                                        proficiencyLevels.find(level => level.id === selectedLevels[lang])?.label
-                                    }
+                                    {proficiencyLevels.slice(0, 3).map(level => (
+                                        selectedLevels[lang] === level.id && (
+                                            <div key={level.id} className="level-item">
+                                                <input
+                                                    type="radio"
+                                                    name={`level-${lang}`}
+                                                    id={`${lang}-${level.id}`}
+                                                    checked={selectedLevels[lang] === level.id}
+                                                    onChange={() => handleLevelChange(lang, level.id)}
+                                                />
+                                                <label>{level.label}</label>
+                                                <p>{level.description}</p>
+                                            </div>
+                                        )
+                                    ))}
                                 </div>
-                            ) : (
-                                <p>Nível não especificado</p>
-                            )
+                                <div>
+                                    {proficiencyLevels.slice(3).map(level => (
+                                        selectedLevels[lang] === level.id && (
+                                            <div key={level.id} className="level-item">
+                                                <input
+                                                    type="radio"
+                                                    name={`level-${lang}`}
+                                                    id={`${lang}-${level.id}`}
+                                                    checked={selectedLevels[lang] === level.id}
+                                                    onChange={() => handleLevelChange(lang, level.id)}
+                                                />
+                                                <label>{level.label}</label>
+                                                <p>{level.description}</p>
+                                            </div>
+                                        )
+                                    ))}
+                                </div>
+                        </div>
                         )}
                     </div>
                 ))}
