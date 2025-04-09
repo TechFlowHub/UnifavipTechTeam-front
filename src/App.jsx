@@ -3,16 +3,18 @@ import Navbar from './components/Navbar/Navbar';
 import AppRoutes from './routes/AppRoutes';
 import Footer from './components/Footer/Footer.jsx';
 import { useLocation, useNavigationType } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import Loading from './components/Loading/Loading';
+import { AuthContext } from './contexts/Auth/AuthContext.jsx';
 
 function App() {
   const location = useLocation();
   const navigationType = useNavigationType();
   const [isLoading, setIsLoading] = useState(false);
+  const { loadingUser } = useContext(AuthContext);
+
   const hiddenRoutes = ["/login", "/register", "/forgot-password", "/recover-token"];
   const hideLayout = hiddenRoutes.includes(location.pathname);
-
   const mounted = useRef(false);
 
   useEffect(() => {
@@ -24,6 +26,8 @@ function App() {
       mounted.current = true;
     }
   }, [location.pathname, navigationType]);
+
+  if (loadingUser) return <Loading />;
 
   return (
     <>

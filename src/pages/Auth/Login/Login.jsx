@@ -10,6 +10,7 @@ const Login = () => {
   const navigate = useNavigate();
   const { showNotification } = useNotification(); 
   const [loading, setLoading] = useState(false);
+  const { loadingUser } = useContext(AuthContext);
 
   const handleLogin = async (formData) => {
     const result = await auth.signin(formData.email, formData.password);
@@ -28,13 +29,21 @@ const Login = () => {
       type: "success",
       duration: 1000,
     });
-
-    setLoading(true); // Ativa o loading
-
-    setTimeout(() => {
-      navigate("/");
-    }, 500);
+  
+    setLoading(true);
+  
+    const waitForUserAndNavigate = () => {
+      const interval = setInterval(() => {
+        if (!loadingUser) {
+          clearInterval(interval);
+          navigate("/");
+        }
+      }, 50);
+    };
+  
+    waitForUserAndNavigate();
   };
+  
 
   const loginConfig = {
     fields: [

@@ -18,7 +18,7 @@ export const useApi = () => ({
   
   logout: async () => {
     const response = await api.post('/auth/logout');
-    return response.data;
+    return response;
   },
 
   validateToken: async (token) => {
@@ -26,15 +26,30 @@ export const useApi = () => ({
     return response.data;
   },
 
-  registerUser: async (userData) => {
+  sendTokenValidate: async (to) => {
+    try {
+      const response = await api.post('/email/send-first-acess-code', { to });
+      return response.data;
+    } catch (error) {
+      console.error('Error sending token:', error || error.response);
+      return false;
+    }
+  },
+
+  userTokenValidate: async ( email, code ) => {
+    try {
+      const response = await api.post('/recovery/verify', { email, code });
+      return response;
+    } catch (error) {
+      console.error('Error validating token:', error || error.response);
+      return false;
+    }
+  },
+
+  registerUser: async (email, password, role) => {
     try {
       const response = await api.post('/auth/register', 
-        userData,
-        {
-          headers: {
-            authorization: `Bearer ${userData.token}`,
-          },
-        }     
+        {email, password, role}  
       );
       return response.data;
     } catch (error) {
