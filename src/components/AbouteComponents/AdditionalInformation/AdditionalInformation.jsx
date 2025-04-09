@@ -55,6 +55,22 @@ const AdditionalInformation = ({ initialData, isOwner }) => {
                                 disabled={!isEditing}
                             />
                         </div>
+
+  
+                        <div>
+                            <label htmlFor="city">
+                                Cidade {isEditing && <span>*</span>}
+                            </label>
+                            <input
+                                type="text"
+                                name="city"
+                                value={formData.city}
+                                onChange={handleInputChange}
+                                placeholder="Nenhuma Informação"
+                                disabled={!isEditing}
+                                
+                            />
+                        </div>
                     </div>
 
                     {/* Link do Portfólio, Estado, Cidade, País */}
@@ -86,24 +102,9 @@ const AdditionalInformation = ({ initialData, isOwner }) => {
                                 onChange={handleInputChange}
                                 placeholder="Nenhuma Informação"
                                 disabled={!isEditing}
-                                style={{ width: "100px" }}
                             />
                         </div>
 
-                        <div>
-                            <label htmlFor="city">
-                                Cidade {isEditing && <span>*</span>}
-                            </label>
-                            <input
-                                type="text"
-                                name="city"
-                                value={formData.city}
-                                onChange={handleInputChange}
-                                placeholder="Nenhuma Informação"
-                                disabled={!isEditing}
-                                style={{ width: "200px" }}
-                            />
-                        </div>
 
                         <div>
                             <label htmlFor="country">
@@ -116,7 +117,6 @@ const AdditionalInformation = ({ initialData, isOwner }) => {
                                 onChange={handleInputChange}
                                 placeholder="Nenhuma Informação"
                                 disabled={!isEditing}
-                                style={{ width: "200px" }}
                             />
                         </div>
                     </div>

@@ -38,15 +38,15 @@ const PersonProfile = () => {
         <CardCommentary />
 
         {location.pathname === "/about-me" && <FormDiversity  isOwner={false}/>}
-        {location.pathname === "/about-me/experiences" && <AboutHabilities isOwner={false} />}
+        {location.pathname === "/about-me/experiences" && <AboutHabilities isOwner={false}/>}
         {location.pathname === "/about-me/skils" && <Languages isOwner={false} />}
-        {location.pathname === "/about-me/info-add" && <h1>4</h1>}
+        {location.pathname === "/about-me/info-add" && <></>}
 
         <div></div>
 
-        {location.pathname === "/about-me/experiences" && <AboutFormations isOwner={false} />}
-        {location.pathname === "/about-me/skils" && <h1>3</h1>}
-        {location.pathname === "/about-me/info-add" && <h1>4</h1>}
+        {location.pathname === "/about-me/experiences" && <AboutFormations isOwner={false}/>}
+        {location.pathname === "/about-me/skils" && <></>}
+        {location.pathname === "/about-me/info-add" && <></>}
 
       </div>
     </>
