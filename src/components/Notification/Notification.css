@@ -3,12 +3,48 @@
   top: 20px;
   right: 20px;
   padding: 15px 20px;
-  border-radius: 8px;
-  color: white;
+  border-radius: 5px;
   font-weight: bold;
-  z-index: 9999;
+  z-index: 99999;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   animation: slide-in 0.3s ease-out;
+  background-color: white;
+}
+
+.notification div {
+  border-radius: 5px;
+  font-family: var(--font-lexend);
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.notification div svg {
+  width: 30px;
+  height: 30px;
+  stroke-width: 1; 
+}
+
+.notification.success {
+  border: 2px solid var(--color-success);
+  color: var(--color-success);
+}
+
+.notification.error {
+  border: 2px solid var(--color-error);
+  color: var(--color-error);
+}
+
+.notification.warning {
+  border: 2px solid var(--color-warning);
+  color: var(--color-warning);
+}
+
+.notification.info {
+  border: 2px solid var(--color-info);
+  color: var(--color-info);
 }
 
 @keyframes slide-in {
@@ -20,20 +56,4 @@
     opacity: 1;
     transform: translateX(0);
   }
-}
-
-.notification.success {
-  background-color: #4caf50;
-}
-
-.notification.warning {
-  background-color: #ff9800;
-}
-
-.notification.error {
-  background-color: #f44336;
-}
-
-.notification.info {
-  background-color: #2196f3;
 }

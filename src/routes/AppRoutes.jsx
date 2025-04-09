@@ -7,8 +7,6 @@ import ForgotPassword from "../pages/Auth/ForgotPassword/ForgotPassword";
 import RecoverToken from "../pages/Auth/RecoverToken/RecoverToken";
 import SearchCV from "../pages/searchCV/SearchCV";
 import PersonProfile from "../pages/PersonProfile/PersonProfile";
-import { useContext } from "react";
-import { AuthContext } from "../contexts/Auth/AuthContext";
 import PublicRouteWithRedirect from "./PublicRouteWithRedirect";
 
 const AppRoutes = () => {

@@ -1,13 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import FormAuth from "../../../components/Forms/FormAuth/FormAuth";
 import { AuthContext } from "../../../contexts/Auth/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useNotification } from "../../../contexts/NotificationContext"; 
+import Loading from "../../../components/Loading/Loading";
 
 const Login = () => {
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
   const { showNotification } = useNotification(); 
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = async (formData) => {
     const result = await auth.signin(formData.email, formData.password);
@@ -16,7 +18,7 @@ const Login = () => {
       showNotification({
         message: result.error,
         type: "error",
-        duration: 1000,
+        duration: 2500,
       });
       return;
     }
@@ -26,7 +28,9 @@ const Login = () => {
       type: "success",
       duration: 1000,
     });
-  
+
+    setLoading(true); // Ativa o loading
+
     setTimeout(() => {
       navigate("/");
     }, 500);
@@ -54,6 +58,8 @@ const Login = () => {
     submitButtonText: "Entrar",
     onSubmit: handleLogin
   };
+
+  if (loading) return <Loading />;
 
   return <FormAuth formConfig={loginConfig} />;
 };

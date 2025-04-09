@@ -1,28 +1,43 @@
-import './App.css'
+import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import AppRoutes from './routes/AppRoutes'
-import Footer from './components/Footer/Footer.jsx'
-import { useLocation } from 'react-router-dom';
-import { useState } from 'react';
-import Notification from './components/Notification/Notification.jsx';
+import AppRoutes from './routes/AppRoutes';
+import Footer from './components/Footer/Footer.jsx';
+import { useLocation, useNavigationType } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import Loading from './components/Loading/Loading';
 
 function App() {
   const location = useLocation();
-  
+  const navigationType = useNavigationType();
+  const [isLoading, setIsLoading] = useState(false);
   const hiddenRoutes = ["/login", "/register", "/forgot-password", "/recover-token"];
   const hideLayout = hiddenRoutes.includes(location.pathname);
 
+  const mounted = useRef(false);
+
+  useEffect(() => {
+    if (mounted.current && navigationType === "PUSH") {
+      setIsLoading(true);
+      const timer = setTimeout(() => setIsLoading(false), 300);
+      return () => clearTimeout(timer);
+    } else {
+      mounted.current = true;
+    }
+  }, [location.pathname, navigationType]);
+
   return (
     <>
-      {hideLayout ? null : <Navbar />}
+      {isLoading && <Loading />}
 
-      <div className='container'>
-        <AppRoutes clasname='container'/>
+      {!hideLayout && <Navbar />}
+
+      <div className="container">
+        <AppRoutes />
       </div>
-      
-      {hideLayout ? null : <Footer />}
+
+      {!hideLayout && <Footer />}
     </>
-  )
+  );
 }
 
 export default App;

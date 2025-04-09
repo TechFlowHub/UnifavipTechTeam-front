@@ -5,6 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: var(--font-lexend);
 }
 
 .navegation {
@@ -98,10 +99,9 @@
 
 .dropdown-content a,
 .dropdown-content button {
-  padding: 10px;
+  padding: 15px 25px;
   text-decoration: none;
-  color: var(--color-black);
-  font-family: var(--font-georama);
+  color: var(--color-about);
   border: none;
   background: none;
   text-align: left;
@@ -111,12 +111,17 @@
   transition: .3s ease-in-out;
   font-size: 14px;
   font-weight: 500;
+  font-family: var(--font-lexend);
 }
 
 .dropdown-content a:hover,
 .dropdown-content button:hover {
   background-color: var(--color-pink-light);
   color: white;
+}
+
+.dropdown-content button:hover {
+  border-radius: 0 0 5px 5px;
 }
 
 .profile-menu:hover .dropdown-content {

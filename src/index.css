@@ -7,6 +7,7 @@
   --color-white: #FFF;
   --color-gray: #878787;
   --color-black: #292929;
+  --color-about: #4e4e4e;
   --color-pink-primary: #84005B;
   --color-pink-dark: #73004F;
   --color-pink-light: #BE0083;
@@ -24,6 +25,11 @@
 
   --gray-emphasis: #878787;
   --gray-text: #C7C7C7;
+
+  --color-success: #00D346;
+  --color-error: #F44336;
+  --color-warning: #FF9800;
+  --color-info: #2196F3;
 
   --font-georama: "Georama", serif;
   --font-alumni: "Alumni Sans", serif;
