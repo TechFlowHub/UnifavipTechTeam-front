@@ -8,38 +8,44 @@ import RecoverToken from "../pages/Auth/RecoverToken/RecoverToken";
 import SearchCV from "../pages/searchCV/SearchCV";
 import PersonProfile from "../pages/PersonProfile/PersonProfile";
 import PublicRouteWithRedirect from "./PublicRouteWithRedirect";
+import RequireValidate from "../contexts/Auth/RequireValidate";
 
 const AppRoutes = () => {
   return (
     <Routes>
        <Route path="/login" element={
-            <PublicRouteWithRedirect>
-              <Login />
-            </PublicRouteWithRedirect>
+          <PublicRouteWithRedirect>
+            <Login />
+          </PublicRouteWithRedirect>
           } />
 
         <Route path="/register" element={
-          <PublicRouteWithRedirect>
-            <Register />
-          </PublicRouteWithRedirect>
+            <PublicRouteWithRedirect>
+              <Register />
+            </PublicRouteWithRedirect>
         } />
 
         <Route path="/forgot-password" element={
-          <PublicRouteWithRedirect>
-            <ForgotPassword />
-          </PublicRouteWithRedirect>
+             <PublicRouteWithRedirect>
+              <ForgotPassword />
+            </PublicRouteWithRedirect>
         } />
 
         <Route path="/recover-token" element={
-          <PublicRouteWithRedirect>
-            <RecoverToken />
-          </PublicRouteWithRedirect>
+            <PublicRouteWithRedirect>
+              <RecoverToken />
+            </PublicRouteWithRedirect>
         } />
       
       <Route path="/" element={<Home/>} /> 
       <Route path="/search-cv" element={<SearchCV/>} />
 
-      <Route path="/about-me" element={<PersonProfile />} />
+      <Route path="/about-me" element={
+        <RequireValidate> 
+          <PersonProfile /> 
+        </RequireValidate>
+        }/>
+
       <Route path="/about-me/experiences" element={<PersonProfile />} />
       <Route path="/about-me/skils" element={<PersonProfile />} />
       <Route path="/about-me/info-add" element={<PersonProfile />} />

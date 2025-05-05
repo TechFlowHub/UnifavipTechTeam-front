@@ -46,6 +46,17 @@ export const useApi = () => ({
     }
   },
 
+  checkEmailValidate: async (email) => {
+    try {
+      const response = await api.get(`/recovery/get-valid/${email}`)
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      console.error('Error checking email:', error || error.response);
+      return false;
+    }
+  },
+
   registerUser: async (email, password, role) => {
     try {
       const response = await api.post('/auth/register', 

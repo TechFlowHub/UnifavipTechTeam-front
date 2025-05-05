@@ -43,7 +43,6 @@ const Login = () => {
   
     waitForUserAndNavigate();
   };
-  
 
   const loginConfig = {
     fields: [

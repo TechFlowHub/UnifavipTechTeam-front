@@ -96,6 +96,16 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const checkEmailValidation = async (email) => {
+    try {
+      const data = await api.checkEmailValidate(email);
+      return data;
+    } catch (error) {
+      const errorMessage = error.response?.data?.message || "Erro ao verificar o email.";
+      return { error: errorMessage };
+    }
+  }
+
   const registerUser = async (email, password, role) => {
     try {
       const data = await api.registerUser(email, password, role);
@@ -126,6 +136,7 @@ export const AuthProvider = ({ children }) => {
         registerUser,
         sendTokenValidate,
         validateTokenUser,
+        checkEmailValidation,
       }}
     >
       {children}
